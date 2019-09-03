@@ -28,7 +28,10 @@
         route.splice(0,serverSlash);
         localStorage.setItem("PT_nextRoute", route.join("/"));
         const path = nextRoute.split("/").slice(0,serverSlash).join("/");
-        location.href = `${path}${search? `?${search}` : '' }${anchor? `#${anchor}` : '' }`;
+        const HREF = `${path}/${search? `?${search}` : '' }${anchor? `#${anchor}` : '' }`;
+        if (location.href !== HREF) {
+            location.href = HREF;
+        }
     </script>
 </head>
 
