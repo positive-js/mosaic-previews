@@ -1,0 +1,27 @@
+<span class="hljs-keyword">import</span> { CommonModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common'</span>;
+<span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { FormsModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> { McIconModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/icon'</span>;
+<span class="hljs-keyword">import</span> { McLinkModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/link'</span>;
+
+<span class="hljs-keyword">import</span> { LinkOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./link-overview/link-overview-example'</span>;
+<span class="hljs-keyword">import</span> { LinkPseudoExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./link-pseudo/link-pseudo-example'</span>;
+
+
+<span class="hljs-keyword">const</span> EXAMPLES = [
+    LinkOverviewExample,
+    LinkPseudoExample
+];
+
+<span class="hljs-meta">@NgModule</span>({
+    imports: [
+        CommonModule,
+        FormsModule,
+        McIconModule,
+        McLinkModule
+    ],
+    declarations: EXAMPLES,
+    exports: EXAMPLES
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> LinkExamplesModule {
+}
