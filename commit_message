@@ -1,1 +1,1 @@
-574df61 fix(popover): arrow have to be under content (#UIM-242)
+55099cb fix(popover): added ESC handler and added focusTrap in example (#UIM-245)
