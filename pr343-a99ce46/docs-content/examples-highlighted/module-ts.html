@@ -1,0 +1,37 @@
+<span class="hljs-keyword">import</span> { CommonModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common'</span>;
+<span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { FormsModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> { McMomentDateModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic-moment-adapter'</span>;
+<span class="hljs-keyword">import</span> { McCheckboxModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/checkbox'</span>;
+<span class="hljs-keyword">import</span> { McFormFieldModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/form-field'</span>;
+<span class="hljs-keyword">import</span> { McIconModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/icon'</span>;
+<span class="hljs-keyword">import</span> { McInputModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/input'</span>;
+<span class="hljs-keyword">import</span> { McSelectModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/select'</span>;
+<span class="hljs-keyword">import</span> { McTimepickerModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/timepicker'</span>;
+
+<span class="hljs-keyword">import</span> { TimepickerOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./timepicker-overview/timepicker-overview-example'</span>;
+
+
+<span class="hljs-keyword">const</span> EXAMPLES = [
+    TimepickerOverviewExample
+];
+
+
+
+<span class="hljs-meta">@NgModule</span>({
+    imports: [
+        CommonModule,
+        FormsModule,
+        McMomentDateModule,
+        McCheckboxModule,
+        McSelectModule,
+        McTimepickerModule,
+        McInputModule,
+        McFormFieldModule,
+        McIconModule
+    ],
+    declarations: EXAMPLES,
+    exports: EXAMPLES
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TimepickerExamplesModule {
+}
