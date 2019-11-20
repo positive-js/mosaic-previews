@@ -1,1 +1,1 @@
-c37b31a fix(tags): prevent focusing on remove tag (#UIM-255)
+09408e1 fix(tree): noUnselectLast does not work (#UIM-178)
