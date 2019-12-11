@@ -1,1 +1,1 @@
-47179d9 feat(docs): added popover and tooltip (#UIM-311, #UIM-314)
+f0d532e fix(select, tree-select): added formatter for hidden text (#UIM-319)
