@@ -1,0 +1,33 @@
+<span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { FormsModule, ReactiveFormsModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> { CdkTreeModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/cdk/tree'</span>;
+<span class="hljs-keyword">import</span> { McFormFieldModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/form-field'</span>;
+<span class="hljs-keyword">import</span> { McIconModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/icon'</span>;
+<span class="hljs-keyword">import</span> { McInputModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/input'</span>;
+<span class="hljs-keyword">import</span> { McTreeModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/tree'</span>;
+<span class="hljs-keyword">import</span> { McTreeSelectModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/tree-select'</span>;
+
+<span class="hljs-keyword">import</span> { TreeSelectMultipleOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tree-select-multiple-overview/tree-select-multiple-overview-example'</span>;
+<span class="hljs-keyword">import</span> { TreeSelectOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tree-select-overview/tree-select-overview-example'</span>;
+
+
+<span class="hljs-keyword">const</span> EXAMPLES = [
+    TreeSelectOverviewExample,
+    TreeSelectMultipleOverviewExample
+];
+
+<span class="hljs-meta">@NgModule</span>({
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        McFormFieldModule,
+        McTreeModule,
+        CdkTreeModule,
+        McTreeSelectModule,
+        McInputModule,
+        McIconModule
+    ],
+    declarations: EXAMPLES,
+    exports: EXAMPLES
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TreeSelectExamplesModule {}
