@@ -1,0 +1,24 @@
+<span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { BrowserModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser'</span>;
+<span class="hljs-keyword">import</span> { McTabsModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/tabs'</span>;
+
+<span class="hljs-keyword">import</span> { TabsLightExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tabs-light-overview/tabs-light-example'</span>;
+<span class="hljs-keyword">import</span> { TabsOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tabs-overview/tabs-overview-example'</span>;
+<span class="hljs-keyword">import</span> { TabsStretchExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tabs-stretch-overview/tabs-stretch-example'</span>;
+
+
+<span class="hljs-keyword">const</span> EXAMPLES = [
+    TabsOverviewExample,
+    TabsLightExample,
+    TabsStretchExample
+];
+
+<span class="hljs-meta">@NgModule</span>({
+    imports: [
+        BrowserModule,
+        McTabsModule
+    ],
+    declarations: EXAMPLES,
+    exports: EXAMPLES
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TabsExamplesModule {}
