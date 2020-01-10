@@ -1,1 +1,1 @@
-bef6042 chore(common): replacing comparator assignment with useCompareByValue usage
+4be5dea changed validation logic and added parameter for switching McValidation
