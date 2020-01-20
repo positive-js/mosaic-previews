@@ -1,0 +1,25 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-timepicker-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-timepicker-element"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"startTime"</span>
+               <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-15 mc-form-label"</span>&gt;</span>С<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mcPrefix</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-clock_16"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+                   <span class="hljs-attr">id</span>=<span class="hljs-string">"startTime"</span>
+                   [<span class="hljs-attr">max-time</span>]=<span class="hljs-string">"endTime?.format(format)"</span>
+                   [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"startTime"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-timepicker-element"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"endTime"</span>
+               <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-15 mc-form-label"</span>&gt;</span>По<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mcPrefix</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-clock_16"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+                   <span class="hljs-attr">id</span>=<span class="hljs-string">"endTime"</span>
+                   [<span class="hljs-attr">min-time</span>]=<span class="hljs-string">"startTime?.format(format)"</span>
+                   [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"endTime"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
