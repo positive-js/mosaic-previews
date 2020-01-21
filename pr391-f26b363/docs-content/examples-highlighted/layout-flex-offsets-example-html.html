@@ -1,0 +1,23 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-controls"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> [(<span class="hljs-attr">value</span>)]=<span class="hljs-string">"selectedSize"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let flexSize of flexSizes"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"flexSize"</span>&gt;</span>{{ flexSize }}<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> [(<span class="hljs-attr">value</span>)]=<span class="hljs-string">"selectedOffset"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let flexOffset of flexOffsets"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"flexOffset"</span>&gt;</span>{{ flexOffset }}<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"layout-row block"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"{{selectedSize}} {{selectedOffset}} block"</span>&gt;</span>{{selectedSize}} {{selectedOffset}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"{{selectedSize}} {{selectedOffset}} block"</span>&gt;</span>{{selectedSize}} {{selectedOffset}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"{{selectedSize}} {{selectedOffset}} block"</span>&gt;</span>{{selectedSize}} {{selectedOffset}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

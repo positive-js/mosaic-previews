@@ -1,1 +1,1 @@
-b949186 feat(docs): changing example logic
+f26b363 fix(validation): validation does not work after build with optimization=true (#UIM-349)
