@@ -1,1 +1,1 @@
-f26b363 fix(validation): validation does not work after build with optimization=true (#UIM-349)
+f200e96 fix(visual): layout-row and layout-column are not have min-width and min-height (#UIM-355)
