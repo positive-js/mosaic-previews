@@ -1,1 +1,1 @@
-e113ada fix(select, tree-select): "one more" label will hide if open select (#UIM-352)
+8c009b3 'border-color' in checkbox and radio changed from 'white' to 'background'
