@@ -1,1 +1,1 @@
-8c009b3 'border-color' in checkbox and radio changed from 'white' to 'background'
+659c5f2 fix(modal): for apply changes need run changeDetection (#UIM-348)
