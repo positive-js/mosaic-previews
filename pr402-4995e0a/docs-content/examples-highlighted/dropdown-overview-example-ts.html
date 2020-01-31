@@ -1,0 +1,19 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Basic dropdown
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'dropdown-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'dropdown-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'dropdown-overview-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DropdownOverviewExample {
+    someValue = <span class="hljs-string">'Lazy Value'</span>;
+    disabled = <span class="hljs-literal">false</span>;
+
+    toggleDisabled() {
+        <span class="hljs-keyword">this</span>.disabled = !<span class="hljs-keyword">this</span>.disabled;
+    }
+}
