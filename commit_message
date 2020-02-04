@@ -1,1 +1,1 @@
-8ab54d4 fix(input): input require ngModel (#UIM-361)
+6673d04 fix: disabled item should prevent click event (#UIM-315)
