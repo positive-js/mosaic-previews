@@ -1,0 +1,65 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Flex layout
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'layout-flex-offsets-example'</span>,
+    templateUrl: <span class="hljs-string">'layout-flex-offsets-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'layout-flex-offsets-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> LayoutFlexOffsetsExample {
+    selectedSize: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-10'</span>;
+    selectedOffset: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-offset-10'</span>;
+
+    flexSizes = [
+        <span class="hljs-string">'flex-0'</span>,
+        <span class="hljs-string">'flex-5'</span>,
+        <span class="hljs-string">'flex-10'</span>,
+        <span class="hljs-string">'flex-15'</span>,
+        <span class="hljs-string">'flex-20'</span>,
+        <span class="hljs-string">'flex-25'</span>,
+        <span class="hljs-string">'flex-30'</span>,
+        <span class="hljs-string">'flex-33'</span>,
+        <span class="hljs-string">'flex-35'</span>,
+        <span class="hljs-string">'flex-40'</span>,
+        <span class="hljs-string">'flex-45'</span>,
+        <span class="hljs-string">'flex-50'</span>,
+        <span class="hljs-string">'flex-60'</span>,
+        <span class="hljs-string">'flex-65'</span>,
+        <span class="hljs-string">'flex-66'</span>,
+        <span class="hljs-string">'flex-70'</span>,
+        <span class="hljs-string">'flex-75'</span>,
+        <span class="hljs-string">'flex-80'</span>,
+        <span class="hljs-string">'flex-85'</span>,
+        <span class="hljs-string">'flex-90'</span>,
+        <span class="hljs-string">'flex-95'</span>,
+        <span class="hljs-string">'flex-100'</span>
+    ];
+
+    flexOffsets = [
+        <span class="hljs-string">'flex-offset-0'</span>,
+        <span class="hljs-string">'flex-offset-5'</span>,
+        <span class="hljs-string">'flex-offset-10'</span>,
+        <span class="hljs-string">'flex-offset-15'</span>,
+        <span class="hljs-string">'flex-offset-20'</span>,
+        <span class="hljs-string">'flex-offset-25'</span>,
+        <span class="hljs-string">'flex-offset-30'</span>,
+        <span class="hljs-string">'flex-offset-33'</span>,
+        <span class="hljs-string">'flex-offset-35'</span>,
+        <span class="hljs-string">'flex-offset-40'</span>,
+        <span class="hljs-string">'flex-offset-45'</span>,
+        <span class="hljs-string">'flex-offset-50'</span>,
+        <span class="hljs-string">'flex-offset-60'</span>,
+        <span class="hljs-string">'flex-offset-65'</span>,
+        <span class="hljs-string">'flex-offset-66'</span>,
+        <span class="hljs-string">'flex-offset-70'</span>,
+        <span class="hljs-string">'flex-offset-75'</span>,
+        <span class="hljs-string">'flex-offset-80'</span>,
+        <span class="hljs-string">'flex-offset-85'</span>,
+        <span class="hljs-string">'flex-offset-90'</span>,
+        <span class="hljs-string">'flex-offset-95'</span>,
+        <span class="hljs-string">'flex-offset-100'</span>
+    ];
+}
