@@ -1,1 +1,1 @@
-8f55a08 chore(common): fixing lint-staged yml script
+db46786 build: moving yaml pre-commit check to husky
