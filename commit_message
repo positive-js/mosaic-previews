@@ -1,1 +1,1 @@
-5f64d88 fix(tags): fixing tag's icons color
+a6ae6ac fix(popover): mcVisibleChange emits only after hidding popover (#UIM-386)
