@@ -1,0 +1,29 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-keyword">const</span> INTERVAL: <span class="hljs-built_in">number</span> = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">const</span> STEP: <span class="hljs-built_in">number</span> = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> MAX_PERCENT: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>;
+
+<span class="hljs-comment">/**
+ * @title Basic progress spinner
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'progress-spinner-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'progress-spinner-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'progress-spinner-overview-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ProgressSpinnerOverviewExample {
+    percent: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+    intervalId: <span class="hljs-built_in">number</span>;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
+        setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">this</span>.percent = (<span class="hljs-keyword">this</span>.percent + STEP) % (MAX_PERCENT + STEP);
+        }, INTERVAL);
+    }
+
+    ngOnDestroy() {
+        clearInterval(<span class="hljs-keyword">this</span>.intervalId);
+    }
+}
