@@ -1,0 +1,20 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-tag-list</span> #<span class="hljs-attr">tagList</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-tag</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let tag of selectedTags"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"tag"</span> (<span class="hljs-attr">removed</span>)=<span class="hljs-string">"onRemove(tag)"</span>&gt;</span>
+            {{ tag }}
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-close-S_16"</span> <span class="hljs-attr">mcTagRemove</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tag</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"New tag..."</span>
+               #<span class="hljs-attr">tagInput</span>
+               [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">"control"</span>
+               [<span class="hljs-attr">mcAutocomplete</span>]=<span class="hljs-string">"autocomplete"</span>
+               [<span class="hljs-attr">mcTagInputFor</span>]=<span class="hljs-string">"tagList"</span>
+               (<span class="hljs-attr">mcTagInputTokenEnd</span>)=<span class="hljs-string">"onCreate($event)"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tag-list</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-autocomplete</span> #<span class="hljs-attr">autocomplete</span> (<span class="hljs-attr">optionSelected</span>)=<span class="hljs-string">"onSelect($event)"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"tagInput.value"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"{ new: true, value: tagInput.value }"</span>&gt;</span>
+            Создать: {{ tagInput.value }}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let tag of filteredTags | async"</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">"tag"</span>&gt;</span>{{ tag }}<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-autocomplete</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
