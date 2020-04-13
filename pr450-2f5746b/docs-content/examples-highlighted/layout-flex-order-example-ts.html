@@ -1,0 +1,29 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Flex layout
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'layout-flex-order-example'</span>,
+    templateUrl: <span class="hljs-string">'layout-flex-order-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'layout-flex-order-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> LayoutFlexOrderExample {
+    selectedFirstBlockOrder: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-order-0'</span>;
+    selectedSecondBlockOrder: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-order-1'</span>;
+    selectedThirdBlockOrder: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-order-2'</span>;
+
+    flexOrders = [
+        <span class="hljs-string">'flex-order-0'</span>,
+        <span class="hljs-string">'flex-order-1'</span>,
+        <span class="hljs-string">'flex-order-2'</span>,
+        <span class="hljs-string">'flex-order-3'</span>,
+        <span class="hljs-string">'flex-order-4'</span>,
+        <span class="hljs-string">'flex-order-5'</span>,
+        <span class="hljs-string">'flex-order-6'</span>,
+        <span class="hljs-string">'flex-order-7'</span>,
+        <span class="hljs-string">'flex-order-8'</span>,
+        <span class="hljs-string">'flex-order-9'</span>
+    ];
+}
