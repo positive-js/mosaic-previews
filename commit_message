@@ -1,1 +1,1 @@
-f9ddd6c fix(popover): Popover wrong left positioning
+7cec47bb fix(visual): set opacity: 0.5 for the better visibility for the text of class name (#464)

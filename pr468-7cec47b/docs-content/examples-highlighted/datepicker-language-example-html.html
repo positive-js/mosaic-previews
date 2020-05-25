@@ -1,0 +1,21 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-group</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">"example-radio-group"</span>
+    (<span class="hljs-attr">change</span>)=<span class="hljs-string">"useLanguage($event)"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let language of languageList"</span>
+                     [<span class="hljs-attr">value</span>]=<span class="hljs-string">"language"</span>
+                     [<span class="hljs-attr">checked</span>]=<span class="hljs-string">"language === 'en'"</span>
+                     <span class="hljs-attr">class</span>=<span class="hljs-string">"example-radio-button"</span>&gt;</span>
+        {{ language }}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-group</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"selectedDate"</span> [<span class="hljs-attr">mcDatepicker</span>]=<span class="hljs-string">"picker"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker-toggle</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"7"</span> <span class="hljs-attr">mcSuffix</span> [<span class="hljs-attr">for</span>]=<span class="hljs-string">"picker"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker-toggle</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker</span> #<span class="hljs-attr">picker</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Date<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{{selectedDate}}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
