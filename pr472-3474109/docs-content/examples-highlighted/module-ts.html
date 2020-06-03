@@ -1,0 +1,24 @@
+<span class="hljs-keyword">import</span> { A11yModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/cdk/a11y'</span>;
+<span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { BrowserAnimationsModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser/animations'</span>;
+<span class="hljs-keyword">import</span> { McButtonModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/button'</span>;
+<span class="hljs-keyword">import</span> { McToolTipModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/tooltip'</span>;
+
+<span class="hljs-keyword">import</span> { TooltipOverviewExample } <span class="hljs-keyword">from</span> <span class="hljs-string">'./tooltip-overview/tooltip-overview-example'</span>;
+
+
+<span class="hljs-keyword">const</span> EXAMPLES = [
+    TooltipOverviewExample
+];
+
+<span class="hljs-meta">@NgModule</span>({
+    imports: [
+        BrowserAnimationsModule,
+        A11yModule,
+        McButtonModule,
+        McToolTipModule
+    ],
+    declarations: EXAMPLES,
+    exports: EXAMPLES
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TooltipExamplesModule {}
