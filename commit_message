@@ -1,1 +1,1 @@
-0c4b010 fix(timepicker): remove parseValidator (#UIM-464)
+8c7262b fix: package.json & yarn.lock to reduce vulnerabilities
