@@ -1,0 +1,33 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, TemplateRef } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { McModalRef, McModalService } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/modal'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Template Modal
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'modal-template-example'</span>,
+    templateUrl: <span class="hljs-string">'modal-template-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'modal-template-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModalTemplateExample {
+    tplModal: McModalRef;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>) {}
+
+    createTplModal(tplTitle: TemplateRef&lt;{}&gt;, tplContent?: TemplateRef&lt;{}&gt;, tplFooter?: TemplateRef&lt;{}&gt;) {
+        <span class="hljs-keyword">this</span>.tplModal = <span class="hljs-keyword">this</span>.modalService.create({
+            mcTitle       : tplTitle,
+            mcContent     : tplContent,
+            mcFooter      : tplFooter,
+            mcClosable    : <span class="hljs-literal">true</span>,
+            mcOnOk        : <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Click ok'</span>)
+        });
+    }
+
+    destroyTplModal() {
+        <span class="hljs-keyword">this</span>.tplModal.triggerOk();
+        <span class="hljs-keyword">this</span>.tplModal.destroy();
+    }
+}
