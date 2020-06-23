@@ -1,1 +1,1 @@
-4e96b3b3 fix: package.json & yarn.lock to reduce vulnerabilities
+bf00d433 fix: package.json, yarn.lock & .snyk to reduce vulnerabilities
