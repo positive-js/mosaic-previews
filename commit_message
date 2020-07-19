@@ -1,1 +1,1 @@
-2cdd771 fix: package.json & yarn.lock to reduce vulnerabilities
+bc74c508 fix(list): options not selected when async updated value (#UIM-472)
