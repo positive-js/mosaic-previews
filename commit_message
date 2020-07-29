@@ -1,1 +1,1 @@
-86d322e3 fix: package.json & yarn.lock to reduce vulnerabilities
+05f9281 fix(tree-select): rewriting button tracking with switch-case
