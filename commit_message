@@ -1,1 +1,1 @@
-267af3c3 fix: package.json & yarn.lock to reduce vulnerabilities
+a6fb95d chore: separate workflow for forked PR (#451)
