@@ -1,1 +1,1 @@
-40d3853 fix(select): select lose selected element after selection with search (#UIM-475)
+50ddcb81 fix(tooltip): Title does not react on value change (#UIM-482)
