@@ -1,1 +1,1 @@
-50ddcb81 fix(tooltip): Title does not react on value change (#UIM-482)
+cd621acd fix: package.json & yarn.lock to reduce vulnerabilities
