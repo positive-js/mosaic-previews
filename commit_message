@@ -1,1 +1,1 @@
-cd621acd fix: package.json & yarn.lock to reduce vulnerabilities
+4be3d7b7 fix(tooltip): Reapply binded properties, reposition event trigger, TemplateRef support for title (#UIM-482)
