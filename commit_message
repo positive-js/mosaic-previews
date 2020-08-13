@@ -1,1 +1,1 @@
-0acaf51 fix(toggle): Each click on the toggle emits two events instead of one #UIM-476
+501de80d fix(toggle): Each click on the toggle emits two events instead of one #UIM-476
