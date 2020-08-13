@@ -1,1 +1,1 @@
-68d3b8b4 fix(splitter): Error in the declaration of the enum Direction #UIM-430
+0acaf51 fix(toggle): Each click on the toggle emits two events instead of one #UIM-476
