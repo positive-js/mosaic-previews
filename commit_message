@@ -1,1 +1,1 @@
-96150839 fix(splitter): remove unnecessary function calls
+81420acc fix(tags): tags are incorrectly added to mc-tag-list with autocomplete #UIM-486
