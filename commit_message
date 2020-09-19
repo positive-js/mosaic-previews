@@ -1,1 +1,1 @@
-4130bc94 build(deps): bump node-fetch from 2.6.0 to 2.6.1
+4824c28 fix: package.json, yarn.lock & .snyk to reduce vulnerabilities
