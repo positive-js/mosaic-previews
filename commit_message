@@ -1,1 +1,1 @@
-d135577 fixed linter error
+bf385ff5 fix(select): select with search does' t let type a space (#UIM-478)
