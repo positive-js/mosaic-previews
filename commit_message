@@ -1,1 +1,1 @@
-1380d43 fix(select, tree-select): does' t fire openedChange event (#UIM-469)
+b7fe0d09 fix(tree): filterValue have to work with null value (#UIM-529)
