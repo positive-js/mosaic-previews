@@ -1,0 +1,43 @@
+<span class="hljs-keyword">import</span> { Component, ViewEncapsulation } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compositeFormValidator</span>(<span class="hljs-params"></span>): <span class="hljs-title">ValidatorFn</span> </span>{
+    <span class="hljs-keyword">return</span> (g: AbstractControl | FormGroup): ValidationErrors | <span class="hljs-function"><span class="hljs-params">null</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> start = g.get(<span class="hljs-string">'start'</span>)?.value;
+        <span class="hljs-keyword">const</span> end = g.get(<span class="hljs-string">'end'</span>)?.value;
+
+        <span class="hljs-keyword">if</span> (IP_PATTERN.test(start) &amp;&amp; IP_PATTERN.test(end)) {
+            <span class="hljs-keyword">const</span> parsedStartIp = start.split(<span class="hljs-string">'.'</span>).map(<span class="hljs-function">(<span class="hljs-params">octet</span>) =&gt;</span> <span class="hljs-built_in">parseInt</span>(octet, <span class="hljs-number">10</span>));
+            <span class="hljs-keyword">const</span> parsedEndIp = end.split(<span class="hljs-string">'.'</span>).map(<span class="hljs-function">(<span class="hljs-params">octet</span>) =&gt;</span> <span class="hljs-built_in">parseInt</span>(octet, <span class="hljs-number">10</span>));
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; parsedStartIp.length; i++) {
+                <span class="hljs-keyword">if</span> (parsedStartIp[i] &gt; parsedEndIp[i]) { <span class="hljs-keyword">return</span> { range: <span class="hljs-literal">true</span> }; }
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    };
+}
+
+<span class="hljs-keyword">const</span> IP_PATTERN = <span class="hljs-regexp">/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/</span>;
+
+<span class="hljs-comment">/**
+ * @title validation-composite
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'validation-composite-example'</span>,
+    templateUrl: <span class="hljs-string">'validation-composite-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'validation-composite-example.css'</span>],
+    encapsulation: ViewEncapsulation.None
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ValidationCompositeExample {
+    compositeForm: FormGroup;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">this</span>.compositeForm = <span class="hljs-keyword">new</span> FormGroup({
+            start: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.pattern(IP_PATTERN)]),
+            end: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.pattern(IP_PATTERN)])
+        }, compositeFormValidator());
+    }
+}
