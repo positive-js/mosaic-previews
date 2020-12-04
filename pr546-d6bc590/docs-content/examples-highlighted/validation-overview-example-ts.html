@@ -1,0 +1,39 @@
+<span class="hljs-keyword">import</span> { Component, ViewEncapsulation } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { FormControl, FormGroup, Validators } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title validation-overview
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'validation-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'validation-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'validation-overview-example.css'</span>],
+    encapsulation: ViewEncapsulation.None
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ValidationOverviewExample {
+    feedbackForm: FormGroup;
+    feedbackFormWithHints: FormGroup;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">this</span>.feedbackFormWithHints = <span class="hljs-keyword">new</span> FormGroup({
+            firstName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            lastName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            thirdName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>),
+            email: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required, Validators.email]),
+            reason: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            rating: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            comment: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>)
+        });
+
+        <span class="hljs-keyword">this</span>.feedbackForm = <span class="hljs-keyword">new</span> FormGroup({
+            firstName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            lastName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            thirdName: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>),
+            email: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required, Validators.email]),
+            reason: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            rating: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>, [Validators.required]),
+            comment: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>)
+        });
+    }
+}

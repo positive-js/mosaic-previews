@@ -1,0 +1,91 @@
+<span class="hljs-comment">/* tslint:disable:no-magic-numbers */</span>
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { DateAdapter, MC_DATE_LOCALE } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/cdk/datetime'</span>;
+<span class="hljs-keyword">import</span> { MomentDateAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic-moment-adapter/adapter'</span>;
+
+<span class="hljs-comment">// Depending on whether rollup is used, moment needs to be imported differently.</span>
+<span class="hljs-comment">// Since Moment.js doesn't have a default export, we normally need to import using the `* as`</span>
+<span class="hljs-comment">// syntax. However, rollup creates a synthetic default module and we thus need to import it using</span>
+<span class="hljs-comment">// the `default as` syntax.</span>
+<span class="hljs-comment">// tslint:disable-next-line:ordered-imports</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> _moment <span class="hljs-keyword">from</span> <span class="hljs-string">'moment'</span>;
+<span class="hljs-comment">// tslint:disable-next-line:no-duplicate-imports</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> _rollupMoment, Moment } <span class="hljs-keyword">from</span> <span class="hljs-string">'moment'</span>;
+
+
+<span class="hljs-keyword">const</span> moment = _rollupMoment || _moment;
+
+<span class="hljs-comment">/**
+ * @title Basic progress absolute-date-formatter
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'absolute-date-formatter-example'</span>,
+    templateUrl: <span class="hljs-string">'absolute-date-formatter-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'absolute-date-formatter-example.css'</span>],
+    providers: [
+        { provide: MC_DATE_LOCALE, useValue: <span class="hljs-string">'ru'</span> },
+        { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MC_DATE_LOCALE] }
+    ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AbsoluteDateFormatterExample {
+    formats: <span class="hljs-built_in">any</span> = {
+        ru: {
+            absolute: {
+                long: {
+                    date: {},
+                    dateTime: {}
+                },
+                short: {
+                    date: {},
+                    dateTime: {}
+                }
+            }
+        },
+        en: {
+            absolute: {
+                long: {
+                    date: {},
+                    dateTime: {}
+                },
+                short: {
+                    date: {},
+                    dateTime: {}
+                }
+            }
+        }
+    };
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> dateAdapter: DateAdapter&lt;Moment&gt;</span>) {
+        <span class="hljs-keyword">this</span>.populateAbsoluteLong(<span class="hljs-string">'ru'</span>);
+        <span class="hljs-keyword">this</span>.populateAbsoluteLong(<span class="hljs-string">'en'</span>);
+
+        <span class="hljs-keyword">this</span>.populateAbsoluteShort(<span class="hljs-string">'ru'</span>);
+        <span class="hljs-keyword">this</span>.populateAbsoluteShort(<span class="hljs-string">'en'</span>);
+    }
+
+    <span class="hljs-keyword">private</span> populateAbsoluteShort(locale: <span class="hljs-built_in">string</span>) {
+        <span class="hljs-keyword">this</span>.dateAdapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> absoluteShort = <span class="hljs-keyword">this</span>.formats[locale].absolute.short;
+
+        absoluteShort.date.currentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteShortDate(moment());
+        absoluteShort.date.notCurrentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteShortDate(moment().subtract(<span class="hljs-number">1</span>, <span class="hljs-string">'years'</span>));
+        absoluteShort.dateTime.currentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteShortDateTime(moment());
+        absoluteShort.dateTime.notCurrentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteShortDateTime(
+            moment().subtract(<span class="hljs-number">1</span>, <span class="hljs-string">'years'</span>)
+        );
+    }
+
+    <span class="hljs-keyword">private</span> populateAbsoluteLong(locale: <span class="hljs-built_in">string</span>) {
+        <span class="hljs-keyword">this</span>.dateAdapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> absoluteLong = <span class="hljs-keyword">this</span>.formats[locale].absolute.long;
+
+        absoluteLong.date.currentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteLongDate(moment());
+        absoluteLong.date.notCurrentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteLongDate(moment().subtract(<span class="hljs-number">1</span>, <span class="hljs-string">'years'</span>));
+        absoluteLong.dateTime.currentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteLongDateTime(moment());
+        absoluteLong.dateTime.notCurrentYear = <span class="hljs-keyword">this</span>.dateAdapter.absoluteLongDateTime(
+            moment().subtract(<span class="hljs-number">1</span>, <span class="hljs-string">'years'</span>)
+        );
+    }
+}
