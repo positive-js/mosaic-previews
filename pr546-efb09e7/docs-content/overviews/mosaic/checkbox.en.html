@@ -1,0 +1,108 @@
+<div class="docs-markdown"><p class="docs-markdown__p">Checkboxes are defined using the <code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> element. Clicking the checkbox or its label toggles the checkbox state, which can be checked, unchecked, or indeterminate.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="label" id="label"></span>
+          Label
+        </div>
+      <p class="docs-markdown__p">The checkbox label describes an option to be selected. The label is provided as the content of the <code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> element.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="label-position" id="label-position"></span>
+          Label position
+        </div>
+      <p class="docs-markdown__p">To place the label before or after the checkbox, use the <code class="docs-markdown__code">[labelPosition]</code> attribute with possible values <code class="docs-markdown__code">&#39;before&#39;</code> and <code class="docs-markdown__code">&#39;after&#39;</code>. The default position is after the checkbox.</p>
+<p class="docs-markdown__p"><code class="docs-markdown__code">&lt;mc-checkbox [labelPosition]=&quot;&#39;before&#39;&quot;&gt;Left side label&lt;/mc-checkbox&gt;</code></p>
+<p class="docs-markdown__p">If you don&#39;t want the label to appear next to the checkbox, you can use 
+<a class="docs-markdown__a" href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-label" target="_blank"><code class="docs-markdown__code">aria-label</code></a> or 
+<a class="docs-markdown__a" href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby" target="_blank"><code class="docs-markdown__code">aria-labelledby</code></a> to 
+specify an appropriate label.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="use-with-<code class="docs-markdown__code">@angular/forms</code>" id="use-with-<code class="docs-markdown__code">@angular/forms</code>"></span>
+          Use with <code class="docs-markdown__code">@angular/forms</code>
+        </div>
+      <p class="docs-markdown__p"><code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> is compatible with <code class="docs-markdown__code">@angular/forms</code> and supports both <code class="docs-markdown__code">FormsModule</code> 
+and <code class="docs-markdown__code">ReactiveFormsModule</code>.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="dual-state" id="dual-state"></span>
+          Dual-state
+        </div>
+      <p class="docs-markdown__p">The dual-state is applied using the <code class="docs-markdown__code">[checked]</code> boolean attribute to show whether the checkbox is selected or not. The default state is checked.</p>
+<div mosaic-docs-example="checkbox-overview"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="indeterminate-state-(partially-selected)" id="indeterminate-state-(partially-selected)"></span>
+          Indeterminate state (partially selected)
+        </div>
+      <p class="docs-markdown__p">The indeterminate state is applied using the <code class="docs-markdown__code">[indeterminate]</code> boolean attribute and can be used when you have a group of options, and a higher-level checkbox must represent their state:</p>
+<ul class="docs-markdown__ul">
+<li class="docs-markdown__li">if only some of the options in a group are selected, the higher-level checkbox appears partially selected (<code class="docs-markdown__code">[indeterminate]=&quot;true&quot;</code>).</li>
+<li class="docs-markdown__li">If all of them are selected, the higher-level checkbox appears selected.</li>
+<li class="docs-markdown__li">If none are selected, the higher-level checkbox appears not selected.</li>
+</ul>
+<p class="docs-markdown__p">&lt;Можно пример с группой чекбоксов?&gt;</p>
+<div mosaic-docs-example="checkbox-indeterminate"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="disabled-checkboxes" id="disabled-checkboxes"></span>
+          Disabled checkboxes
+        </div>
+      <p class="docs-markdown__p">You can use the <code class="docs-markdown__code">[disabled]</code> boolean attribute to make a checkbox look unclickable.</p>
+<p class="docs-markdown__p"><code class="docs-markdown__code">&lt;mc-checkbox [disabled]=&quot;true&quot;&gt;Disabled&lt;/mc-checkbox&gt;</code></p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="click-action-config" id="click-action-config"></span>
+          Click action config
+        </div>
+      <p class="docs-markdown__p">When user clicks on the <code class="docs-markdown__code">mc-checkbox</code>, the default behavior is toggle <code class="docs-markdown__code">checked</code> value and set
+<code class="docs-markdown__code">indeterminate</code> to <code class="docs-markdown__code">false</code>. This behavior can be customized by
+<a class="docs-markdown__a" href="https://angular.io/guide/dependency-injection" target="_blank">providing a new value</a>
+of <code class="docs-markdown__code">MC_CHECKBOX_CLICK_ACTION</code> to the checkbox.</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code">providers: [
+  {provide: MC_CHECKBOX_CLICK_ACTION, useValue: &#39;check&#39;}
+]</code></pre>
+<p class="docs-markdown__p">The possible values are:</p>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="<code class="docs-markdown__code">noop</code>" id="<code class="docs-markdown__code">noop</code>"></span>
+          <code class="docs-markdown__code">noop</code>
+        </div>
+      <p class="docs-markdown__p">Do not change the <code class="docs-markdown__code">checked</code> value or <code class="docs-markdown__code">indeterminate</code> value. Developers have the power to
+implement customized click actions.</p>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="<code class="docs-markdown__code">check</code>" id="<code class="docs-markdown__code">check</code>"></span>
+          <code class="docs-markdown__code">check</code>
+        </div>
+      <p class="docs-markdown__p">Toggle <code class="docs-markdown__code">checked</code> value of the checkbox, ignore <code class="docs-markdown__code">indeterminate</code> value. If the
+checkbox is in <code class="docs-markdown__code">indeterminate</code> state, the checkbox will display as an <code class="docs-markdown__code">indeterminate</code> checkbox
+regardless the <code class="docs-markdown__code">checked</code> value.</p>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="<code class="docs-markdown__code">check-indeterminate</code>" id="<code class="docs-markdown__code">check-indeterminate</code>"></span>
+          <code class="docs-markdown__code">check-indeterminate</code>
+        </div>
+      <p class="docs-markdown__p">Default behavior of <code class="docs-markdown__code">mc-checkbox</code>. Always set <code class="docs-markdown__code">indeterminate</code> to <code class="docs-markdown__code">false</code>
+when user click on the <code class="docs-markdown__code">mc-checkbox</code>.
+This matches the behavior of native <code class="docs-markdown__code">&lt;input type=&quot;checkbox&quot;&gt;</code>.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="theming" id="theming"></span>
+          Theming
+        </div>
+      <p class="docs-markdown__p">The color of a <code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> can be changed by using the <code class="docs-markdown__code">color</code> property. By default, checkboxes
+use the theme&#39;s accent color. This can be changed to <code class="docs-markdown__code">&#39;primary&#39;</code> or <code class="docs-markdown__code">&#39;error&#39;</code>.  </p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="accessibility" id="accessibility"></span>
+          Accessibility
+        </div>
+      <p class="docs-markdown__p">The <code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> uses an internal <code class="docs-markdown__code">&lt;input type=&quot;checkbox&quot;&gt;</code> to provide an accessible experience.
+This internal checkbox receives focus and is automatically labelled by the text content of the
+<code class="docs-markdown__code">&lt;mc-checkbox&gt;</code> element.</p>
+<p class="docs-markdown__p">Checkboxes without text or labels should be given a meaningful label via <code class="docs-markdown__code">aria-label</code> or
+<code class="docs-markdown__code">aria-labelledby</code>.</p>
+</div>
