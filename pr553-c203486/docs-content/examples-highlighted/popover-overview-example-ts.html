@@ -1,0 +1,98 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Basic popover
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'popover-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'popover-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'popover-overview-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> PopoverOverviewExample {
+    popoverActiveStage: <span class="hljs-built_in">number</span>;
+    selectedOrder: <span class="hljs-built_in">boolean</span>;
+
+    isPopoverVisibleLeft: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
+
+    activatedPosition: <span class="hljs-built_in">string</span> = <span class="hljs-string">''</span>;
+
+    ELEMENTS = {
+        BUTTON: <span class="hljs-string">'button'</span>,
+        INPUT: <span class="hljs-string">'input'</span>,
+        ICON: <span class="hljs-string">'icon'</span>
+    };
+
+    TRIGGERS = {
+        CLICK: <span class="hljs-string">'click'</span>,
+        FOCUS: <span class="hljs-string">'focus'</span>,
+        HOVER: <span class="hljs-string">'hover'</span>
+    };
+
+    SIZE = {
+        LARGE: <span class="hljs-string">'large'</span>,
+        NORMAL: <span class="hljs-string">'normal'</span>,
+        SMALL: <span class="hljs-string">'small'</span>
+    };
+
+    selectedElement: <span class="hljs-built_in">string</span> = <span class="hljs-string">'button'</span>;
+    selectedPlacement: <span class="hljs-built_in">string</span> = <span class="hljs-string">'left'</span>;
+    selectedTrigger: <span class="hljs-built_in">string</span> = <span class="hljs-string">'click'</span>;
+    selectedSize: <span class="hljs-built_in">string</span> = <span class="hljs-string">'normal'</span>;
+    layoutClass: <span class="hljs-built_in">string</span> = <span class="hljs-string">'flex-65 layout-row layout-align-center-center'</span>;
+    content: <span class="hljs-built_in">string</span> = <span class="hljs-string">'button text'</span>;
+    userDefinedPlacementPriority: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">'bottom'</span>, <span class="hljs-string">'right'</span>];
+    multipleSelected: <span class="hljs-built_in">string</span>[] = [];
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">this</span>.popoverActiveStage = <span class="hljs-number">1</span>;
+    }
+
+    changeStep(direction: <span class="hljs-built_in">number</span>) {
+        <span class="hljs-keyword">const</span> newStage = <span class="hljs-keyword">this</span>.popoverActiveStage + direction;
+
+        <span class="hljs-comment">// tslint:disable-next-line:no-magic-numbers</span>
+        <span class="hljs-keyword">if</span> (newStage &lt; <span class="hljs-number">1</span> || newStage &gt; <span class="hljs-number">3</span>) { <span class="hljs-keyword">return</span>; }
+
+        <span class="hljs-keyword">this</span>.popoverActiveStage += direction;
+    }
+
+    onPopoverVisibleChange($event) {
+        <span class="hljs-keyword">if</span> (!$event) {
+            <span class="hljs-keyword">this</span>.activatedPosition = <span class="hljs-string">''</span>;
+        }
+    }
+
+    onStrategyPlacementChange(event) {
+        <span class="hljs-keyword">this</span>.activatedPosition = event;
+    }
+
+    setPlacement(placement: <span class="hljs-built_in">string</span>) {
+        <span class="hljs-keyword">this</span>.selectedPlacement = placement;
+    }
+
+    showElement(): <span class="hljs-built_in">string</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.selectedElement;
+    }
+
+    activated(value: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.selectedPlacement === value;
+    }
+
+    isActual(value: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.activatedPosition === value &amp;&amp; <span class="hljs-keyword">this</span>.selectedPlacement !== <span class="hljs-keyword">this</span>.activatedPosition;
+    }
+
+    getOrder(forElement: <span class="hljs-built_in">string</span>) {
+        <span class="hljs-keyword">if</span> (forElement === <span class="hljs-string">'config'</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.selectedOrder ? {order: <span class="hljs-number">2</span>} : {order: <span class="hljs-number">1</span>};
+        }
+        <span class="hljs-keyword">if</span> (forElement === <span class="hljs-string">'result'</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.selectedOrder ? {order: <span class="hljs-number">1</span>} : {order: <span class="hljs-number">2</span>};
+        }
+    }
+
+    <span class="hljs-keyword">get</span> isFallbackActivated(): <span class="hljs-built_in">boolean</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.selectedPlacement !== <span class="hljs-keyword">this</span>.activatedPosition &amp;&amp; <span class="hljs-keyword">this</span>.activatedPosition !== <span class="hljs-string">''</span>;
+    }
+}
