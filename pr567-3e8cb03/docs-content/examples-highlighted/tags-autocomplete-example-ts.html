@@ -1,0 +1,109 @@
+<span class="hljs-keyword">import</span> { Component, ElementRef, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { FormControl } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> { McAutocomplete, McAutocompleteSelectedEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/autocomplete'</span>;
+<span class="hljs-keyword">import</span> { McTagInputEvent, McTagList } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/tags'</span>;
+<span class="hljs-keyword">import</span> { merge } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs'</span>;
+<span class="hljs-keyword">import</span> { map } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/operators'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Basic tags autocomplete
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'tags-autocomplete-example'</span>,
+    templateUrl: <span class="hljs-string">'tags-autocomplete-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'tags-autocomplete-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TagsAutocompleteExample {
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'tagList'</span>, { <span class="hljs-keyword">static</span>: <span class="hljs-literal">false</span> }) tagList: McTagList;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'tagInput'</span>, { <span class="hljs-keyword">static</span>: <span class="hljs-literal">false</span> }) tagInput: ElementRef&lt;HTMLInputElement&gt;;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'autocomplete'</span>, { <span class="hljs-keyword">static</span>: <span class="hljs-literal">false</span> }) autocomplete: McAutocomplete;
+
+    control = <span class="hljs-keyword">new</span> FormControl();
+
+    allTags: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">'tag1'</span>, <span class="hljs-string">'tag2'</span>, <span class="hljs-string">'tag3'</span>, <span class="hljs-string">'tag4'</span>, <span class="hljs-string">'tag5'</span>, <span class="hljs-string">'tag6'</span>, <span class="hljs-string">'tag7'</span>, <span class="hljs-string">'tag8'</span>, <span class="hljs-string">'tag9'</span>, <span class="hljs-string">'tag10'</span>];
+    filteredTagsByInput: <span class="hljs-built_in">string</span>[] = [];
+    selectedTags: <span class="hljs-built_in">string</span>[] = [<span class="hljs-string">'tag1'</span>];
+
+    filteredTags: <span class="hljs-built_in">any</span>;
+
+    ngAfterViewInit(): <span class="hljs-built_in">void</span> {
+        <span class="hljs-keyword">this</span>.filteredTags = merge(
+            <span class="hljs-keyword">this</span>.tagList.tagChanges.asObservable()
+                .pipe(map(<span class="hljs-function">(<span class="hljs-params">selectedTags</span>) =&gt;</span> {
+                    <span class="hljs-keyword">const</span> values = selectedTags.map(<span class="hljs-function">(<span class="hljs-params">tag: <span class="hljs-built_in">any</span></span>) =&gt;</span> tag.value);
+
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.allTags.filter(<span class="hljs-function">(<span class="hljs-params">tag</span>) =&gt;</span> !values.includes(tag));
+                })),
+            <span class="hljs-keyword">this</span>.control.valueChanges
+                .pipe(map(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
+                    <span class="hljs-keyword">const</span> typedText = (value &amp;&amp; value.new) ? value.value : value;
+
+                    <span class="hljs-keyword">this</span>.filteredTagsByInput = typedText ?
+                        <span class="hljs-keyword">this</span>.filter(typedText) : <span class="hljs-keyword">this</span>.allTags.slice();
+
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.filteredTagsByInput.filter(
+                        <span class="hljs-comment">// @ts-ignore</span>
+                        (tag) =&gt; !<span class="hljs-keyword">this</span>.selectedTags.includes(tag)
+                    );
+                }))
+        );
+    }
+
+    addOnBlurFunc(event: FocusEvent) {
+        <span class="hljs-keyword">const</span> target: HTMLElement = event.relatedTarget <span class="hljs-keyword">as</span> HTMLElement;
+
+        <span class="hljs-keyword">if</span> (!target || target.tagName !== <span class="hljs-string">'MC-OPTION'</span>) {
+            <span class="hljs-keyword">const</span> mcTagEvent: McTagInputEvent = {
+                input: <span class="hljs-keyword">this</span>.tagInput.nativeElement,
+                value : <span class="hljs-keyword">this</span>.tagInput.nativeElement.value
+            };
+
+            <span class="hljs-keyword">this</span>.onCreate(mcTagEvent);
+        }
+    }
+
+    onCreate(event: McTagInputEvent): <span class="hljs-built_in">void</span> {
+        <span class="hljs-keyword">const</span> input = event.input;
+        <span class="hljs-keyword">const</span> value = event.value;
+
+        <span class="hljs-keyword">if</span> ((value || <span class="hljs-string">''</span>).trim()) {
+            <span class="hljs-keyword">const</span> isOptionSelected = <span class="hljs-keyword">this</span>.autocomplete.options.some(<span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span> option.selected);
+            <span class="hljs-keyword">if</span> (!isOptionSelected) {
+                <span class="hljs-keyword">this</span>.selectedTags.push(value.trim());
+            }
+        }
+
+        <span class="hljs-keyword">if</span> (input) {
+            input.value = <span class="hljs-string">''</span>;
+        }
+
+        <span class="hljs-keyword">this</span>.control.setValue(<span class="hljs-literal">null</span>);
+    }
+
+    onSelect(event: McAutocompleteSelectedEvent): <span class="hljs-built_in">void</span> {
+        event.option.deselect();
+
+        <span class="hljs-keyword">if</span> (event.option.value.new) {
+            <span class="hljs-keyword">this</span>.selectedTags.push(event.option.value.value);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.selectedTags.push(event.option.value);
+        }
+        <span class="hljs-keyword">this</span>.tagInput.nativeElement.value = <span class="hljs-string">''</span>;
+        <span class="hljs-keyword">this</span>.control.setValue(<span class="hljs-literal">null</span>);
+    }
+
+    onRemove(fruit: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">void</span> {
+        <span class="hljs-keyword">const</span> index = <span class="hljs-keyword">this</span>.selectedTags.indexOf(fruit);
+
+        <span class="hljs-keyword">if</span> (index &gt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.selectedTags.splice(index, <span class="hljs-number">1</span>);
+        }
+    }
+
+    <span class="hljs-keyword">private</span> filter(value: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span>[] {
+        <span class="hljs-keyword">const</span> filterValue = value.toLowerCase();
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.allTags.filter(<span class="hljs-function">(<span class="hljs-params">tag</span>) =&gt;</span> tag.toLowerCase().indexOf(filterValue) === <span class="hljs-number">0</span>);
+    }
+}
