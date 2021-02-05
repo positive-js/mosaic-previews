@@ -1,1 +1,1 @@
-3e8cb03f fix(form-field): no need add class mc-form-field_has-stepper (#UIM-563)
+5097b6e4 added paddings & calculating padding with border & css-tokens has only sizes
