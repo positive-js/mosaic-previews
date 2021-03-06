@@ -1,0 +1,605 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs-api">
+    <h2>
+        API reference for Angular Mosaic timepicker
+    </h2>
+
+    <p class="docs-api-module-import">
+        <code>
+          import {McTimepickerModule} from '@angular/mosaic/timepicker';
+        </code>
+    </p><h3 id="directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
+    
+      
+
+<h4 id="McTimepicker" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="McTimepicker"></span>
+    <code>McTimepicker</code>
+    
+</h4><p class="docs-api-directive-selectors">
+    <span class="docs-api-class-selector-label">Selector:</span>
+    
+    <span class="docs-api-class-selector-name">input[mcTimepicker]</span>
+    
+</p><span class="docs-api-class-export-label">Exported as:</span>
+<span class="docs-api-class-export-name">mcTimepicker</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>disabled: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>format: TimeFormats</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>id: string</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>max: D | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>mcValidationTooltip: McTooltip</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>min: D | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+            @Input()</div><p class="docs-api-property-name">
+            <code>value: D | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
+            @Output()</div><p class="docs-api-property-name">
+            <code>incorrectInput: EventEmitter&lt;void&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>errorState: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>hasSelection: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>isFullFormat: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>isShortFormat: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>ngControl: any</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>onInput: () =&gt; {
+    const formattedValue = this.formatUserInput(this.viewValue);
+    const newTimeObj = this.getDateFromTimeString(formattedValue);
+    this.lastValueValid = !!newTimeObj;
+    if (!newTimeObj) {
+        this.control.updateValueAndValidity();
+        return;
+    }
+    const selectionStart = this.selectionStart;
+    const selectionEnd = this.selectionEnd;
+    this.setViewValue(this.getTimeStringFromDate(newTimeObj, this.format));
+    this.selectionStart = selectionStart;
+    this.selectionEnd = selectionEnd;
+    this.createSelectionOfTimeComponentInInput((selectionStart as number) + 1);
+    this.value = newTimeObj;
+    this.onChange(newTimeObj);
+    this.stateChanges.next();
+}</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>selectionEnd: number | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>selectionStart: number | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>viewValue: string</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focusChanged
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                isFocused</p>
+            <code class="docs-api-method-parameter-type">boolean</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getSize
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">number</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onBlur
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onKeyDown
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                event</p>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onPaste
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">registerOnValidatorChange
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                fn</p>
+            <code class="docs-api-method-parameter-type">() =&gt; void</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">validate
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                control</p>
+            <code class="docs-api-method-parameter-type">AbstractControl</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">ValidationErrors | null</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+
+
+
+    <h3 id="constants" class="docs-header-link docs-api-h3">
+      <span header-link="constants"></span>
+      Constants
+    </h3>
+    
+      
+
+<h4 id="TIMEFORMAT_PLACEHOLDERS" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="TIMEFORMAT_PLACEHOLDERS"></span>
+    <code>TIMEFORMAT_PLACEHOLDERS</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> TIMEFORMAT_PLACEHOLDERS: { [timeFormat: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">string</span>; };</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="DEFAULT_TIME_FORMAT" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="DEFAULT_TIME_FORMAT"></span>
+    <code>DEFAULT_TIME_FORMAT</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> DEFAULT_TIME_FORMAT: TimeFormats;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="HOURS_MINUTES_SECONDS_REGEXP" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="HOURS_MINUTES_SECONDS_REGEXP"></span>
+    <code>HOURS_MINUTES_SECONDS_REGEXP</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> HOURS_MINUTES_SECONDS_REGEXP: <span class="hljs-built_in">RegExp</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="HOURS_MINUTES_REGEXP" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="HOURS_MINUTES_REGEXP"></span>
+    <code>HOURS_MINUTES_REGEXP</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> HOURS_MINUTES_REGEXP: <span class="hljs-built_in">RegExp</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="HOURS_ONLY_REGEXP" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="HOURS_ONLY_REGEXP"></span>
+    <code>HOURS_ONLY_REGEXP</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> HOURS_ONLY_REGEXP: <span class="hljs-built_in">RegExp</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="AM_PM_FORMAT_REGEXP" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="AM_PM_FORMAT_REGEXP"></span>
+    <code>AM_PM_FORMAT_REGEXP</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> AM_PM_FORMAT_REGEXP: <span class="hljs-built_in">RegExp</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="SECONDS_PER_MINUTE" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="SECONDS_PER_MINUTE"></span>
+    <code>SECONDS_PER_MINUTE</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SECONDS_PER_MINUTE: <span class="hljs-built_in">number</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="MINUTES_PER_HOUR" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="MINUTES_PER_HOUR"></span>
+    <code>MINUTES_PER_HOUR</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MINUTES_PER_HOUR: <span class="hljs-built_in">number</span>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="HOURS_PER_DAY" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="HOURS_PER_DAY"></span>
+    <code>HOURS_PER_DAY</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> HOURS_PER_DAY: <span class="hljs-built_in">number</span>;</code>
+</pre>
+</div>
+
+
+    </div>

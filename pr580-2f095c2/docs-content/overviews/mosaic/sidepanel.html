@@ -1,0 +1,118 @@
+<div class="docs-markdown"><p class="docs-markdown__p"><code class="docs-markdown__code">McSidepanelService</code> используется для открытия боковых панелей.
+Эти панели появляются из за границы экрана. Их можно использовать для отображения дополнительной информации без потери контекста
+или для выполнения каких-либо действий.</p>
+<p class="docs-markdown__p">Боковую панель можно вызвать методом <code class="docs-markdown__code">open</code>, передав в него шаблон:</p>
+<div mosaic-docs-example="sidepanel-overview"></div>
+
+<p class="docs-markdown__p"> или компонент для загрузки, а также объект конфигурации, если нужно. </p>
+<div mosaic-docs-example="sidepanel-component"></div>
+
+<p class="docs-markdown__p">Метод <code class="docs-markdown__code">open</code> возвращает экземпляр класса <code class="docs-markdown__code">McSidepanelRef</code>:</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts"><span class="hljs-keyword">const</span> sidepanelRef = sidepanelService.open(ExampleSidepanelComponent, {
+    <span class="hljs-attr">hasBackdrop</span>: <span class="hljs-literal">false</span>
+});
+</code></pre>
+<p class="docs-markdown__p"><code class="docs-markdown__code">McSidepanelRef</code> - это ссылка на открытую боковую панель. Она используется для закрытия панели 
+и для получения уведомлений при открытии/закрытии панели.</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts">sidepanelRef.afterClosed().subscribe(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Sidepanel result: <span class="hljs-subst">${result}</span>`</span>); <span class="hljs-comment">// I was closed</span>
+});
+
+sidepanelRef.close(<span class="hljs-string">&#x27;I was closed&#x27;</span>);
+</code></pre>
+<p class="docs-markdown__p">Заметьте, что за раз можно открыть несколько боковых панелей. Любой компонент, содержащийся внутри боковой панели
+также может использовать <code class="docs-markdown__code">McSidepanelRef</code>.</p>
+<p class="docs-markdown__p">###Specifying global configuration defaults
+Свойства боковых панелей по-умолчанию можно определить передав экземпляра класса <code class="docs-markdown__code">McSidepanelConfig</code>
+в <code class="docs-markdown__code">MC_SIDEPANEL_DEFAULT_OPTIONS</code> в корневом модуле вашего приложения.</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts"><span class="hljs-meta">@NgModule</span>({
+    <span class="hljs-attr">providers</span>: [
+        { <span class="hljs-attr">provide</span>: MC_SIDEPANEL_DEFAULT_OPTIONS, <span class="hljs-attr">useValue</span>: { <span class="hljs-attr">hasBackdrop</span>: <span class="hljs-literal">false</span> } }
+    ]
+})
+</code></pre>
+<p class="docs-markdown__p">###Sharing data with the sidepanel component
+Если вы хотите передать некоторые данные в боковую панель, нужно использовать в конфигурации свойство <code class="docs-markdown__code">data</code>:</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts"><span class="hljs-keyword">const</span> sidepanelRef = sidepanelService.open(ExampleSidepanelComponent, {
+    <span class="hljs-attr">data</span>: { <span class="hljs-attr">items</span>: [<span class="hljs-string">&#x27;One&#x27;</span>, <span class="hljs-string">&#x27;Two&#x27;</span>, <span class="hljs-string">&#x27;Three&#x27;</span>] }
+});
+</code></pre>
+<p class="docs-markdown__p">После этого вы можете получить доступ к переданным данным с помощью токена <code class="docs-markdown__code">MC_SIDEPANEL_DATA</code>:</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts"><span class="hljs-keyword">import</span> { Component, Inject } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { MC_SIDEPANEL_DATA } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic&#x27;</span>;
+
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;passed in {{ data.items }}&#x27;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleSidepanelComponent</span> </span>{
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-meta">@Inject</span>(MC_SIDEPANEL_DATA) <span class="hljs-keyword">public</span> data: <span class="hljs-built_in">any</span></span>)</span> {}
+}
+</code></pre>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="configuring-sidepanel-content-via-<code class="docs-markdown__code">entrycomponents</code>" id="configuring-sidepanel-content-via-<code class="docs-markdown__code">entrycomponents</code>"></span>
+          Configuring sidepanel content via <code class="docs-markdown__code">entryComponents</code>
+        </div>
+      <p class="docs-markdown__p"><code class="docs-markdown__code">McSidepanelService</code> создает экземпляры компонентов во время выполнения. Чтобы это работало,
+кампилятору Angular нужна дополнительная информация для создания <code class="docs-markdown__code">ComponentFactory</code>
+для вашего компонента контента боковой панели.</p>
+<p class="docs-markdown__p">Все компоненты, использующиеся в боковой панели нужно добавить в <code class="docs-markdown__code">entryComponents</code> в <code class="docs-markdown__code">NgModule</code>.</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-ts"><span class="hljs-meta">@NgModule</span>({
+  <span class="hljs-attr">imports</span>: [
+    <span class="hljs-comment">// ...</span>
+    McSidepanelModule
+  ],
+
+  <span class="hljs-attr">declarations</span>: [
+    AppComponent,
+    ExampleSidepanelComponent
+  ],
+
+  <span class="hljs-attr">entryComponents</span>: [
+    ExampleSidepanelComponent
+  ],
+
+  <span class="hljs-attr">bootstrap</span>: [AppComponent]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppModule</span> </span>{}
+</code></pre>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="sidepanel-content" id="sidepanel-content"></span>
+          Sidepanel content
+        </div>
+      <p class="docs-markdown__p">Для структуризации контента боковой панели можно использовать несколько директив:
+<code class="docs-markdown__code">&lt;mc-sidepanel-header&gt;</code>, <code class="docs-markdown__code">&lt;mc-sidepanel-body&gt;</code>, <code class="docs-markdown__code">&lt;mc-sidepanel-footer&gt;</code> 
+и <code class="docs-markdown__code">&lt;mc-sidepanel-actions&gt;</code>.</p>
+<p class="docs-markdown__p">Также, вы можете обозначить кнопку закрытия боковой панели с помощью директивы <code class="docs-markdown__code">mc-sidepanel-close</code>. Например, кнопка отмены в футере.</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code" class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">mc-sidepanel-header</span> [<span class="hljs-attr">closeable</span>]=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    Sidepanel Header
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-sidepanel-header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-sidepanel-body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;layout-padding&quot;</span>&gt;</span>
+    Sidepanel Body
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-sidepanel-body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-sidepanel-footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-sidepanel-actions</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;primary&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;doAnotherAction()&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Another Action<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-sidepanel-actions</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-sidepanel-actions</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;primary&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;doAction()&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;second&quot;</span> <span class="hljs-attr">mc-sidepanel-close</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-sidepanel-actions</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-sidepanel-footer</span>&gt;</span>
+</code></pre>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="keyboard-interaction" id="keyboard-interaction"></span>
+          Keyboard interaction
+        </div>
+      <p class="docs-markdown__p">По-умолчанию, нажатие ESC закроет боковую панел. Хотя это поведение можно отключить с помощью свойства <code class="docs-markdown__code">disableClose</code>,
+этого стоит избегать, чтобы не сломать ожидаемые пользователями паттерны поведения.</p>
+</div>

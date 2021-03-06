@@ -1,1 +1,1 @@
-7608cf4 added files in wallaby.js for hide message "No files with tests found, check your tests list patterns."
+2f095c20 fix: package.json & yarn.lock to reduce vulnerabilities
