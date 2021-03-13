@@ -1,1 +1,1 @@
-67f5dd5c build(deps-dev): bump madge from 3.12.0 to 4.0.1
+56565392 fix: package.json & yarn.lock to reduce vulnerabilities
