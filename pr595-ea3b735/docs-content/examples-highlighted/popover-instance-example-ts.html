@@ -1,0 +1,25 @@
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { McPopover } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/popover'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title popover-instance
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'popover-instance-example'</span>,
+    templateUrl: <span class="hljs-string">'popover-instance-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'popover-instance-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> PopoverInstanceExample {
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'popover'</span>, { <span class="hljs-keyword">static</span>: <span class="hljs-literal">false</span> }) popover: McPopover;
+
+    togglePopover($event) {
+        $event.stopPropagation();
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.popover.isOpen) {
+            <span class="hljs-keyword">this</span>.popover.hide();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.popover.show();
+        }
+    }
+}
