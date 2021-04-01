@@ -1,0 +1,47 @@
+<span class="hljs-keyword">import</span> { ListRange } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/cdk/collections'</span>;
+<span class="hljs-keyword">import</span> { CdkVirtualScrollViewport } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/cdk/scrolling'</span>;
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> OPTIONS = [
+    <span class="hljs-string">'Abakan'</span>, <span class="hljs-string">'Almetyevsk'</span>, <span class="hljs-string">'Anadyr'</span>, <span class="hljs-string">'Anapa'</span>, <span class="hljs-string">'Arkhangelsk'</span>, <span class="hljs-string">'Astrakhan'</span>, <span class="hljs-string">'Barnaul'</span>, <span class="hljs-string">'Belgorod'</span>, <span class="hljs-string">'Beslan'</span>, <span class="hljs-string">'Biysk'</span>,
+    <span class="hljs-string">'Birobidzhan'</span>, <span class="hljs-string">'Blagoveshchensk'</span>, <span class="hljs-string">'Bologoye'</span>, <span class="hljs-string">'Bryansk'</span>, <span class="hljs-string">'Veliky Novgorod'</span>, <span class="hljs-string">'Veliky Ustyug'</span>, <span class="hljs-string">'Vladivostok'</span>,
+    <span class="hljs-string">'Vladikavkaz'</span>, <span class="hljs-string">'Vladimir'</span>, <span class="hljs-string">'Volgograd'</span>, <span class="hljs-string">'Vologda'</span>, <span class="hljs-string">'Vorkuta'</span>, <span class="hljs-string">'Voronezh'</span>, <span class="hljs-string">'Gatchina'</span>, <span class="hljs-string">'Gdov'</span>, <span class="hljs-string">'Gelendzhik'</span>,
+    <span class="hljs-string">'Gorno-Altaysk'</span>, <span class="hljs-string">'Grozny'</span>, <span class="hljs-string">'Gudermes'</span>, <span class="hljs-string">'Gus-Khrustalny'</span>, <span class="hljs-string">'Dzerzhinsk'</span>, <span class="hljs-string">'Dmitrov'</span>, <span class="hljs-string">'Dubna'</span>, <span class="hljs-string">'Yeysk'</span>, <span class="hljs-string">'Yekaterinburg'</span>,
+    <span class="hljs-string">'Yelabuga'</span>, <span class="hljs-string">'Yelets'</span>, <span class="hljs-string">'Yessentuki'</span>, <span class="hljs-string">'Zlatoust'</span>, <span class="hljs-string">'Ivanovo'</span>, <span class="hljs-string">'Izhevsk'</span>, <span class="hljs-string">'Irkutsk'</span>, <span class="hljs-string">'Yoshkar-Ola'</span>, <span class="hljs-string">'Kazan'</span>,
+    <span class="hljs-string">'Kaliningrad'</span>, <span class="hljs-string">'Kaluga'</span>, <span class="hljs-string">'Kemerovo'</span>, <span class="hljs-string">'Kislovodsk'</span>, <span class="hljs-string">'Komsomolsk-on-Amur'</span>, <span class="hljs-string">'Kotlas'</span>, <span class="hljs-string">'Krasnodar'</span>, <span class="hljs-string">'Krasnoyarsk'</span>,
+    <span class="hljs-string">'Kurgan'</span>, <span class="hljs-string">'Kursk'</span>, <span class="hljs-string">'Kyzyl'</span>, <span class="hljs-string">'Leninogorsk'</span>, <span class="hljs-string">'Lensk'</span>, <span class="hljs-string">'Lipetsk'</span>, <span class="hljs-string">'Luga'</span>, <span class="hljs-string">'Lyuban'</span>, <span class="hljs-string">'Lyubertsy'</span>, <span class="hljs-string">'Magadan'</span>, <span class="hljs-string">'Maykop'</span>,
+    <span class="hljs-string">'Makhachkala'</span>, <span class="hljs-string">'Miass'</span>, <span class="hljs-string">'Mineralnye Vody'</span>, <span class="hljs-string">'Mirny'</span>, <span class="hljs-string">'Moscow'</span>, <span class="hljs-string">'Murmansk'</span>, <span class="hljs-string">'Murom'</span>, <span class="hljs-string">'Mytishchi'</span>,
+    <span class="hljs-string">'Naberezhnye Chelny'</span>, <span class="hljs-string">'Nadym'</span>, <span class="hljs-string">'Nalchik'</span>, <span class="hljs-string">'Nazran'</span>, <span class="hljs-string">'Naryan-Mar'</span>, <span class="hljs-string">'Nakhodka'</span>, <span class="hljs-string">'Nizhnevartovsk'</span>, <span class="hljs-string">'Nizhnekamsk'</span>,
+    <span class="hljs-string">'Nizhny Novgorod'</span>, <span class="hljs-string">'Nizhny Tagil'</span>, <span class="hljs-string">'Novokuznetsk'</span>, <span class="hljs-string">'Novosibirsk'</span>, <span class="hljs-string">'Novy Urengoy'</span>, <span class="hljs-string">'Norilsk'</span>, <span class="hljs-string">'Obninsk'</span>,
+    <span class="hljs-string">'Oktyabrsky'</span>, <span class="hljs-string">'Omsk'</span>, <span class="hljs-string">'Orenburg'</span>, <span class="hljs-string">'Orekhovo-Zuyevo'</span>, <span class="hljs-string">'Oryol'</span>, <span class="hljs-string">'Penza'</span>, <span class="hljs-string">'Perm'</span>, <span class="hljs-string">'Petrozavodsk'</span>,
+    <span class="hljs-string">'Petropavlovsk-Kamchatsky'</span>, <span class="hljs-string">'Podolsk'</span>, <span class="hljs-string">'Pskov'</span>, <span class="hljs-string">'Pyatigorsk'</span>, <span class="hljs-string">'Rostov-on-Don'</span>, <span class="hljs-string">'Rybinsk'</span>, <span class="hljs-string">'Ryazan'</span>, <span class="hljs-string">'Salekhard'</span>,
+    <span class="hljs-string">'Samara'</span>, <span class="hljs-string">'Saint Petersburg'</span>, <span class="hljs-string">'Saransk'</span>, <span class="hljs-string">'Saratov'</span>, <span class="hljs-string">'Severodvinsk'</span>, <span class="hljs-string">'Smolensk'</span>, <span class="hljs-string">'Sol-Iletsk'</span>, <span class="hljs-string">'Sochi'</span>, <span class="hljs-string">'Stavropol'</span>,
+    <span class="hljs-string">'Surgut'</span>, <span class="hljs-string">'Syktyvkar'</span>, <span class="hljs-string">'Tambov'</span>, <span class="hljs-string">'Tver'</span>, <span class="hljs-string">'Tobolsk'</span>, <span class="hljs-string">'Tolyatti'</span>, <span class="hljs-string">'Tomsk'</span>, <span class="hljs-string">'Tuapse'</span>, <span class="hljs-string">'Tula'</span>, <span class="hljs-string">'Tynda'</span>, <span class="hljs-string">'Tyumen'</span>,
+    <span class="hljs-string">'Ulan-Ude'</span>, <span class="hljs-string">'Ulyanovsk'</span>, <span class="hljs-string">'Ufa'</span>, <span class="hljs-string">'Khabarovsk'</span>, <span class="hljs-string">'Khanty-Mansiysk'</span>, <span class="hljs-string">'Chebarkul'</span>, <span class="hljs-string">'Cheboksary'</span>, <span class="hljs-string">'Chelyabinsk'</span>,
+    <span class="hljs-string">'Cherepovets'</span>, <span class="hljs-string">'Cherkessk'</span>, <span class="hljs-string">'Chistopol'</span>, <span class="hljs-string">'Chita'</span>, <span class="hljs-string">'Shadrinsk'</span>, <span class="hljs-string">'Shatura'</span>, <span class="hljs-string">'Shuya'</span>, <span class="hljs-string">'Elista'</span>, <span class="hljs-string">'Engels'</span>,
+    <span class="hljs-string">'Yuzhno-Sakhalinsk'</span>, <span class="hljs-string">'Yakutsk'</span>, <span class="hljs-string">'Yaroslavl'</span>
+];
+
+<span class="hljs-comment">/**
+ * @title select-virtual-scroll
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'select-virtual-scroll-example'</span>,
+    templateUrl: <span class="hljs-string">'select-virtual-scroll-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'select-virtual-scroll-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SelectVirtualScrollExample {
+    options: <span class="hljs-built_in">string</span>[] = OPTIONS.sort();
+
+    initialRange: ListRange = { start: <span class="hljs-number">0</span>, end: <span class="hljs-number">7</span> } <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> ListRange;
+
+    <span class="hljs-meta">@ViewChild</span>(CdkVirtualScrollViewport) cdkVirtualScrollViewport: CdkVirtualScrollViewport;
+
+    openedChange(opened) {
+        <span class="hljs-keyword">if</span> (opened) { <span class="hljs-keyword">return</span>; }
+
+        <span class="hljs-keyword">this</span>.cdkVirtualScrollViewport.setRenderedContentOffset(<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">this</span>.cdkVirtualScrollViewport.setRenderedRange(<span class="hljs-keyword">this</span>.initialRange);
+    }
+}
