@@ -1,0 +1,63 @@
+<span class="hljs-keyword">import</span> { Component, Inject, ViewEncapsulation } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { MC_SIDEPANEL_DATA, McSidepanelPosition, McSidepanelService } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/sidepanel'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Template Modal
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'sidepanel-component-example'</span>,
+    templateUrl: <span class="hljs-string">'sidepanel-component-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'sidepanel-component-example.css'</span>],
+    encapsulation: ViewEncapsulation.None
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SidepanelComponentExample {
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> sidepanelService: McSidepanelService</span>) {}
+
+    openComponentSidepanel() {
+        <span class="hljs-keyword">this</span>.sidepanelService.open(SidepanelExampleCustomComponent, {
+            position: McSidepanelPosition.Right,
+            data: {
+                openComponentSidepanel: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> { <span class="hljs-keyword">this</span>.openComponentSidepanel(); }
+            }
+        });
+    }
+}
+
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'example-sidepanel'</span>,
+    template: <span class="hljs-string">`
+    &lt;mc-sidepanel-header [closeable]="true"&gt;
+        Sidepanel Component Content
+    &lt;/mc-sidepanel-header&gt;
+    &lt;mc-sidepanel-body class="layout-padding"&gt;
+        &lt;div class="mc-subheading"&gt;Sidepanel Component Body&lt;/div&gt;
+
+        &lt;div *ngFor="let item of array; index as i"&gt;
+            {{ i + 1 }}
+        &lt;/div&gt;
+    &lt;/mc-sidepanel-body&gt;
+    &lt;mc-sidepanel-footer&gt;
+        &lt;mc-sidepanel-actions align="right"&gt;
+            &lt;button mc-button color="primary" (click)="openComponentSidepanel()"&gt;
+                &lt;span&gt;Open another sidepanel&lt;/span&gt;
+            &lt;/button&gt;
+
+            &lt;button mc-button color="second" mc-sidepanel-close&gt;
+                &lt;span&gt;Close&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/mc-sidepanel-actions&gt;
+    &lt;/mc-sidepanel-footer&gt;`</span>,
+    host: {
+        <span class="hljs-keyword">class</span>: <span class="hljs-string">'layout-column flex sidepanel-container'</span>
+    }
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> SidepanelExampleCustomComponent {
+    openComponentSidepanel: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">void</span>;
+
+    array = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">60</span>); <span class="hljs-comment">// tslint:disable-line</span>
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-meta">@Inject</span>(MC_SIDEPANEL_DATA) <span class="hljs-keyword">public</span> data: <span class="hljs-built_in">any</span></span>) {
+        <span class="hljs-keyword">this</span>.openComponentSidepanel = data.openComponentSidepanel;
+    }
+}
