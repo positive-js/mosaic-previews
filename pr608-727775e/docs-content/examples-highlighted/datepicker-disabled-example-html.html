@@ -1,0 +1,58 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">".example-datepicker-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datepicker disabled<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>
+            <span class="hljs-attr">class</span>=<span class="hljs-string">"example-datepicker"</span>
+            (<span class="hljs-attr">click</span>)=<span class="hljs-string">"myDatepicker1.toggle()"</span>
+            <span class="hljs-attr">mcTooltip</span>
+            [<span class="hljs-attr">mcTitle</span>]=<span class="hljs-string">"'Только цифры'"</span>
+            #<span class="hljs-attr">tooltip1</span>=<span class="hljs-string">"mcTooltip"</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> [<span class="hljs-attr">ngModel</span>]=<span class="hljs-string">"date"</span> [<span class="hljs-attr">mcDatepicker</span>]=<span class="hljs-string">"myDatepicker1"</span> [<span class="hljs-attr">mcValidationTooltip</span>]=<span class="hljs-string">"tooltip1"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-calendar_16"</span> <span class="hljs-attr">mcSuffix</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker</span> <span class="hljs-attr">disabled</span> #<span class="hljs-attr">myDatepicker1</span> <span class="hljs-attr">startView</span>=<span class="hljs-string">"multi-year"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datepicker with disabled input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-datepicker"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"myDatepicker1.toggle()"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> [<span class="hljs-attr">ngModel</span>]=<span class="hljs-string">"date"</span> [<span class="hljs-attr">mcDatepicker</span>]=<span class="hljs-string">"myDatepicker2"</span> <span class="hljs-attr">disabled</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-calendar_16"</span> <span class="hljs-attr">mcSuffix</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker</span> #<span class="hljs-attr">myDatepicker2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datepicker with readonly input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"example-datepicker"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"myDatepicker3.toggle()"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> [<span class="hljs-attr">ngModel</span>]=<span class="hljs-string">"date"</span> [<span class="hljs-attr">mcDatepicker</span>]=<span class="hljs-string">"myDatepicker3"</span> <span class="hljs-attr">readonly</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-calendar_16"</span> <span class="hljs-attr">mcSuffix</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker</span> #<span class="hljs-attr">myDatepicker3</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Datepicker with some dates disabled<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>
+            <span class="hljs-attr">class</span>=<span class="hljs-string">"example-datepicker"</span>
+            (<span class="hljs-attr">click</span>)=<span class="hljs-string">"myDatepicker4.toggle()"</span>
+            <span class="hljs-attr">mcTooltip</span>
+            [<span class="hljs-attr">mcTitle</span>]=<span class="hljs-string">"'Только цифры'"</span>
+            #<span class="hljs-attr">tooltip4</span>=<span class="hljs-string">"mcTooltip"</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> [<span class="hljs-attr">ngModel</span>]=<span class="hljs-string">"date"</span>
+                   [<span class="hljs-attr">mcDatepicker</span>]=<span class="hljs-string">"myDatepicker4"</span>
+                   [<span class="hljs-attr">mcDatepickerFilter</span>]=<span class="hljs-string">"myFilter"</span>
+                   [<span class="hljs-attr">mcValidationTooltip</span>]=<span class="hljs-string">"tooltip4"</span>
+                   [<span class="hljs-attr">min</span>]=<span class="hljs-string">"minDate"</span>
+                   [<span class="hljs-attr">max</span>]=<span class="hljs-string">"maxDate"</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">"mc-calendar_16"</span> <span class="hljs-attr">mcSuffix</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-datepicker</span> #<span class="hljs-attr">myDatepicker4</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-datepicker</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
