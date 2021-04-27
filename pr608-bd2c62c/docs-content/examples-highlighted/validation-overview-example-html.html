@@ -1,0 +1,143 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-margin"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-width"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-headline"</span>&gt;</span>Вариация с текстами ошибок<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-subheading"</span>&gt;</span>Форма обратной связи<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">"feedbackFormWithHints"</span> <span class="hljs-attr">novalidate</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Имя<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"firstName"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-hint</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-hint"</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"feedbackFormWithHints.controls.firstName.invalid"</span>&gt;</span>Укажите ваше имя<span class="hljs-tag">&lt;/<span class="hljs-name">mc-hint</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Фамилия<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"lastName"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-hint</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-hint"</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"feedbackFormWithHints.controls.lastName.invalid"</span>&gt;</span>Укажите вашу фамилию<span class="hljs-tag">&lt;/<span class="hljs-name">mc-hint</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Отчество<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"thirdName"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Необязательно"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Адрес эл. почты<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"email"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-hint</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-hint"</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"feedbackFormWithHints.controls.email.invalid"</span>&gt;</span>Оставьте свой адрес эл. почты<span class="hljs-tag">&lt;/<span class="hljs-name">mc-hint</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Причина обращения<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"reason"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-hint</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-hint"</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"feedbackFormWithHints.controls.reason.invalid"</span>&gt;</span>Укажите причину обращения<span class="hljs-tag">&lt;/<span class="hljs-name">mc-hint</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Ваша оценка<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"rating"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-hint</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-hint"</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"feedbackFormWithHints.controls.rating.invalid"</span>&gt;</span>Дайте оценку работы наших специалистов<span class="hljs-tag">&lt;/<span class="hljs-name">mc-hint</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Комментарий<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">mcTextarea</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Отправить<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-margin"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-width"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-headline"</span>&gt;</span>Вариация без текста ошибок<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-subheading"</span>&gt;</span>Форма обратной связи<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">"feedbackForm"</span> <span class="hljs-attr">novalidate</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Имя<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"firstName"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Фамилия<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"lastName"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Отчество<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"thirdName"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Необязательно"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Адрес эл. почты<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"email"</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Причина обращения<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"reason"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Ваша оценка<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"rating"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"docs-row"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mc-caption docs-label"</span>&gt;</span>Комментарий<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">mcTextarea</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">"comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Отправить<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
