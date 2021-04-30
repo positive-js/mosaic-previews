@@ -1,1 +1,1 @@
-666db902 build(deps): bump ssri from 6.0.1 to 6.0.2
+ac67ede fix: package.json & yarn.lock to reduce vulnerabilities
