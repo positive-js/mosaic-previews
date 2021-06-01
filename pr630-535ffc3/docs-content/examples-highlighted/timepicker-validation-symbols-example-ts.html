@@ -1,0 +1,20 @@
+<span class="hljs-keyword">import</span> { Component  } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { DateAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/cdk/datetime'</span>;
+<span class="hljs-keyword">import</span> { DateTime } <span class="hljs-keyword">from</span> <span class="hljs-string">'luxon'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Timepicker overview
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'timepicker-validation-letters-symbols'</span>,
+    templateUrl: <span class="hljs-string">'timepicker-validation-symbols-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'timepicker-validation-symbols-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TimepickerValidationSymbolsExample {
+    time: DateTime;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> adapter: DateAdapter&lt;DateTime&gt;</span>) {
+        <span class="hljs-keyword">this</span>.time = <span class="hljs-keyword">this</span>.adapter.today().startOf(<span class="hljs-string">'hour'</span>);
+    }
+}
