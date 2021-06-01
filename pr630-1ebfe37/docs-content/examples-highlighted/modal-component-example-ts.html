@@ -1,0 +1,69 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { McModalRef, McModalService } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/modal'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Component Modal
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'modal-component-example'</span>,
+    templateUrl: <span class="hljs-string">'modal-component-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'modal-component-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModalComponentExample {
+    componentModal: McModalRef;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>) {}
+
+    openModal() {
+        <span class="hljs-keyword">this</span>.componentModal = <span class="hljs-keyword">this</span>.modalService.open({
+            mcComponent: McModalCustomComponent,
+            mcComponentParams: {
+                title: <span class="hljs-string">'Title'</span>,
+                subtitle: <span class="hljs-string">'Subtitle'</span>
+            }
+        });
+
+        <span class="hljs-keyword">this</span>.componentModal.afterOpen.subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[afterOpen] emitted!'</span>);
+        });
+
+        <span class="hljs-keyword">this</span>.componentModal.afterClose.subscribe(<span class="hljs-function">(<span class="hljs-params">action: 'save' | 'close'</span>) =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`[afterClose] emitted, chosen action: <span class="hljs-subst">${action}</span>`</span>);
+        });
+    }
+}
+
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'mc-modal-full-custom-component'</span>,
+    template: <span class="hljs-string">`
+        &lt;mc-modal-title&gt;
+            Modal Title
+        &lt;/mc-modal-title&gt;
+
+        &lt;mc-modal-body&gt;
+            &lt;h2&gt;{{ title }}&lt;/h2&gt;
+            &lt;h4&gt;{{ subtitle }}&lt;/h4&gt;
+            &lt;p&gt;
+                &lt;span&gt;Get Modal instance in component&lt;/span&gt;
+                &lt;button mc-button [color]="'primary'" (click)="destroyModal('close')"&gt;destroy modal in the component&lt;/button&gt;
+            &lt;/p&gt;
+        &lt;/mc-modal-body&gt;
+
+        &lt;div mc-modal-footer&gt;
+            &lt;button mc-button [color]="'primary'" (click)="destroyModal('save')"&gt;Save&lt;/button&gt;
+            &lt;button mc-button autofocus (click)="destroyModal('close')"&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+  `</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> McModalCustomComponent {
+    <span class="hljs-meta">@Input</span>() title: <span class="hljs-built_in">string</span>;
+    <span class="hljs-meta">@Input</span>() subtitle: <span class="hljs-built_in">string</span>;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modal: McModalRef</span>) { }
+
+    destroyModal(action: <span class="hljs-string">'save'</span> | <span class="hljs-string">'close'</span>) {
+        <span class="hljs-keyword">this</span>.modal.destroy(action);
+    }
+}
