@@ -1,0 +1,30 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { DateAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/cdk/datetime'</span>;
+<span class="hljs-keyword">import</span> { DateTime } <span class="hljs-keyword">from</span> <span class="hljs-string">'luxon'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Disabled datepicker
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'datepicker-disabled-example'</span>,
+    templateUrl: <span class="hljs-string">'datepicker-disabled-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'datepicker-disabled-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DatepickerDisabledExample {
+    sunday = <span class="hljs-number">6</span>;
+
+    date: DateTime;
+    minDate: DateTime;
+    maxDate: DateTime;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> adapter: DateAdapter&lt;DateTime&gt;</span>) {
+        <span class="hljs-keyword">this</span>.date = <span class="hljs-keyword">this</span>.adapter.today();
+        <span class="hljs-keyword">this</span>.minDate = <span class="hljs-keyword">this</span>.adapter.today().minus({ year: <span class="hljs-number">1</span> });
+        <span class="hljs-keyword">this</span>.maxDate = <span class="hljs-keyword">this</span>.adapter.today().plus({ year: <span class="hljs-number">1</span> });
+    }
+
+    myFilter(date: DateTime): <span class="hljs-built_in">boolean</span> {
+        <span class="hljs-keyword">return</span> date.day !== <span class="hljs-number">0</span> &amp;&amp; date.day !== <span class="hljs-keyword">this</span>.sunday;
+    }
+}
