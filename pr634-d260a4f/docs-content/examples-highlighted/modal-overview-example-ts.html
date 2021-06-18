@@ -1,0 +1,61 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { McButton } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/button'</span>;
+<span class="hljs-keyword">import</span> { McModalService, ModalSize } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/modal'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Basic Modal
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'modal-overview-example'</span>,
+    templateUrl: <span class="hljs-string">'modal-overview-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'modal-overview-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModalOverviewExample {
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'confirm'</span>) confirm: McButton;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'success'</span>) success: McButton;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'delete'</span>) <span class="hljs-keyword">delete</span>: McButton;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>) {}
+
+    showConfirmModal() {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-keyword">this</span>.modalService.confirm({
+            mcSize: ModalSize.Small,
+            mcMaskClosable: <span class="hljs-literal">true</span>,
+            mcContent   : <span class="hljs-string">'Save changes?'</span>,
+            mcOkText    : <span class="hljs-string">'Save'</span>,
+            mcCancelText: <span class="hljs-string">'Cancel'</span>,
+            mcOnOk      : <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'OK'</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.confirm.focusViaKeyboard());
+    }
+
+    showSuccessModal() {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-keyword">this</span>.modalService.success({
+            mcSize: ModalSize.Small,
+            mcMaskClosable: <span class="hljs-literal">true</span>,
+            mcContent   : <span class="hljs-string">'All changes are saved!'</span>,
+            mcOkText    : <span class="hljs-string">'ОК'</span>,
+            mcCancelText: <span class="hljs-string">'Cancel'</span>,
+            mcOnOk      : <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'OK'</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.success.focusViaKeyboard());
+    }
+
+    showDeleteModal() {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-keyword">this</span>.modalService.delete({
+            mcContent   : <span class="hljs-string">'The tasks, policies and tags associated with the customer will be deleted too. Delete selected customer?'</span>,
+            mcOkText    : <span class="hljs-string">'Delete'</span>,
+            mcCancelText: <span class="hljs-string">'Cancel'</span>,
+            mcWidth     : <span class="hljs-string">'480px'</span>,
+            mcMaskClosable: <span class="hljs-literal">true</span>,
+            mcOnOk      : <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Delete'</span>),
+            mcOnCancel  : <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Cancel'</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.delete.focusViaKeyboard());
+    }
+}
