@@ -1,0 +1,70 @@
+<div class="docs-markdown"><p class="docs-markdown__p"><code class="docs-markdown__code">McModalService</code> позволяет создавать и управлять модальными окнами.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="simple-modal" id="simple-modal"></span>
+          Simple modal
+        </div>
+      <p class="docs-markdown__p">С помощью McModalService можно открывать модальные окна трех стандартных типов: <code class="docs-markdown__code">confirm</code>, <code class="docs-markdown__code">success</code> и <code class="docs-markdown__code">delete</code>.</p>
+<div mosaic-docs-example="modal-overview"></div>
+
+<p class="docs-markdown__p">Также можно открыть модальное окно типа <code class="docs-markdown__code">custom</code> при помощи метода <code class="docs-markdown__code">open()</code> или создать модальное окно нужного типа методом <code class="docs-markdown__code">create()</code>.</p>
+<p class="docs-markdown__p">В методах <code class="docs-markdown__code">McModalService</code> можно настраивать заголовок, контент и футер модального окна
+при помощи свойств: <code class="docs-markdown__code">mcTitle</code>, <code class="docs-markdown__code">mcContent</code> и <code class="docs-markdown__code">mcFooter</code> (за исключением метода <code class="docs-markdown__code">confirm()</code> с предустановленным <code class="docs-markdown__code">mcFooter</code>).
+Все они могут принимают на вход строку или <code class="docs-markdown__code">TemplateRef</code>, а в <code class="docs-markdown__code">mcFooter</code> можно передавать массив параметров кнопок, например:</p>
+<pre class="docs-markdown__pre"><code class="docs-markdown__code">mcFooter: [{
+    label: &#39;button 1&#39;,
+    type: &#39;primary&#39;,
+    loading: () =&gt; isLoading,
+    onClick: (componentInstance: any) =&gt; {
+        componentInstance.title = &#39;title in inner component is changed&#39;;
+    }
+}, {
+    label: &#39;button 2&#39;,
+    type: &#39;primary&#39;,
+    autoFocus: true,
+    show: () =&gt; isShown,
+    onClick: (componentInstance: any) =&gt; {
+        componentInstance.title = &#39;title in inner component is changed&#39;;
+    }
+}]</code></pre>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="template-modal" id="template-modal"></span>
+          Template modal
+        </div>
+      <div mosaic-docs-example="modal-template"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="modal-with-custom-component" id="modal-with-custom-component"></span>
+          Modal with custom component
+        </div>
+      <p class="docs-markdown__p">Свойство mcComponent позволяет передавать в методы <code class="docs-markdown__code">McModalService</code> кастомный компонент. 
+Входные параметры с декоратором Input, определенные в копоненте модального окна, можно передать из методов <code class="docs-markdown__code">open()</code> и др.
+при помощи свойства <code class="docs-markdown__code">mcComponentParams</code>.</p>
+<p class="docs-markdown__p">McModalService позволяет подписаться на события при помощи параметров <code class="docs-markdown__code">mcAfterOpen</code>, <code class="docs-markdown__code">mcAfterClose</code>, <code class="docs-markdown__code">mcOnOk</code> и <code class="docs-markdown__code">mcOnCancel</code>,
+или способом, показанным ниже: </p>
+<div mosaic-docs-example="modal-component"></div>
+
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="modal-sizes" id="modal-sizes"></span>
+          Modal sizes
+        </div>
+      <div mosaic-docs-example="modal-sizes"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="modal-with-scrollable-body" id="modal-with-scrollable-body"></span>
+          Modal with scrollable body
+        </div>
+      <div mosaic-docs-example="modal-scroll"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="modal-with-focused-content" id="modal-with-focused-content"></span>
+          Modal with focused content
+        </div>
+      <div mosaic-docs-example="modal-focus-content"></div>
+</div>
