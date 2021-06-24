@@ -1,1 +1,1 @@
-06ee578e fix(mosaic-luxon-adapter): absoluteLongDateTime and absoluteShortDateTime without seconds (#UIM-666)
+703fb65d fixed error for publish-docs-preview and added prefix for luxon version
