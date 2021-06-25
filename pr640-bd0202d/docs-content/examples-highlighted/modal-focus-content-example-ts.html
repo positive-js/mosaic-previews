@@ -1,0 +1,80 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { McButton } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/button'</span>;
+<span class="hljs-keyword">import</span> { McInput } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/input'</span>;
+<span class="hljs-keyword">import</span> { McModalRef, McModalService } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ptsecurity/mosaic/modal'</span>;
+
+
+<span class="hljs-comment">/**
+ * @title Modal with focused content
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'modal-focus-content-example'</span>,
+    templateUrl: <span class="hljs-string">'modal-focus-content-example.html'</span>,
+    styleUrls: [<span class="hljs-string">'modal-focus-content-example.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ModalFocusContentExample {
+    componentModal: McModalRef;
+
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'modalButton'</span>) modalButton: McButton;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>) {}
+
+    openModal() {
+        <span class="hljs-keyword">this</span>.componentModal = <span class="hljs-keyword">this</span>.modalService.open({ mcComponent: McModalFocusContentComponent });
+
+        <span class="hljs-keyword">this</span>.componentModal.afterOpen
+            .subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.componentModal.getContentComponent().focusedField.focus());
+
+        <span class="hljs-keyword">this</span>.componentModal.afterClose
+            .subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.modalButton.focusViaKeyboard());
+    }
+}
+
+<span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'mc-modal-focus-content-component'</span>,
+    template: <span class="hljs-string">`
+        &lt;mc-modal-title&gt;Modal Title&lt;/mc-modal-title&gt;
+
+        &lt;mc-modal-body&gt;
+            &lt;form class="mc-form-horizontal margin" novalidate&gt;
+                &lt;div class="mc-form__row"&gt;
+                    &lt;label class="mc-form__label"&gt;Подпись поля&lt;/label&gt;
+                    &lt;mc-form-field class="mc-form__control flex-80"&gt;
+                        &lt;input name="input" #focusedField mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mc-form__row"&gt;
+                    &lt;label class="mc-form__label"&gt;Подпись поля&lt;/label&gt;
+                    &lt;mc-form-field class="mc-form__control flex-50"&gt;
+                        &lt;input name="input" mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                    &lt;mc-form-field class="mc-form__control flex-30"&gt;
+                        &lt;input name="input" mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/mc-modal-body&gt;
+
+        &lt;div mc-modal-footer&gt;
+            &lt;button mc-button [color]="'primary'" (click)="destroyModal('save')"&gt;Save&lt;/button&gt;
+            &lt;button mc-button autofocus (click)="destroyModal('close')"&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+  `</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> McModalFocusContentComponent {
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">'focusedField'</span>, { read: McInput }) focusedField: McInput;
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modal: McModalRef</span>) { }
+
+    destroyModal(action: <span class="hljs-string">'save'</span> | <span class="hljs-string">'close'</span>) {
+        <span class="hljs-keyword">this</span>.modal.destroy(action);
+    }
+}

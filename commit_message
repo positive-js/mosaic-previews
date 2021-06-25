@@ -1,1 +1,1 @@
-703fb65d fixed error for publish-docs-preview and added prefix for luxon version
+bd0202d5 fix(build): resolving UMD Module Identifiers (#UIM-676)
