@@ -1,0 +1,159 @@
+<div class="docs-markdown"><p class="docs-markdown__p">Ссылка связывает веб-страницы или выступает как более легкий аналог кнопки.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="когда-использовать" id="когда-использовать"></span>
+          Когда использовать
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Для перехода между страницами</li>
+<li class="docs-markdown__li">Если нужно встроить кнопку в текст. В таком случае используется <a class="docs-markdown__a" href="/button/overview" target="_blank">псевдоссылка</a></li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="когда-не-нужно-использовать-ссылки" id="когда-не-нужно-использовать-ссылки"></span>
+          Когда не нужно использовать ссылки
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Для основного действия в модальном диалоге — <a class="docs-markdown__a" href="/button/overview" target="_blank">используйте кнопку</a></li>
+<li class="docs-markdown__li">Для интерактивности вне текста — используйте <a class="docs-markdown__a" href="/button/overview" target="_blank">кнопку без фона</a></li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="структура-компонента" id="структура-компонента"></span>
+          Структура компонента
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Текст</li>
+<li class="docs-markdown__li">Подчеркивание (для обычных ссылок)</li>
+<li class="docs-markdown__li">Иконка (необязательно)</li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="описание-работы" id="описание-работы"></span>
+          Описание работы
+        </div>
+      
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="типы-ссылок-по-странице-перехода" id="типы-ссылок-по-странице-перехода"></span>
+          Типы ссылок по странице перехода
+        </div>
+      <div class="docs-header-link docs-header-link_5">Страница внутри продукта</div><p class="docs-markdown__p">Для основных переходов.</p>
+<div mosaic-docs-example="link-general"></div>
+
+<div class="docs-header-link docs-header-link_5">Страница внутри продукта в новой вкладке</div><p class="docs-markdown__p">Когда важно сохранить родительскую страницу.</p>
+<p class="docs-markdown__p">Используйте ссылки, открывающиеся в новой вкладке, как можно реже.</p>
+<div mosaic-docs-example="link-target-blank"></div>
+
+<div class="docs-header-link docs-header-link_5">Внешняя страница</div><p class="docs-markdown__p">Для перехода на внешние страницы. Внешние страницы — все, которые не входят контур продукта (включая другие продукты PT). Отличие поддерживается иконкой.</p>
+<div mosaic-docs-example="link-external"></div>
+
+<div class="docs-header-link docs-header-link_5">Внешнее приложение</div><p class="docs-markdown__p">Для открытия в других приложениях. Желательно писать название приложения прямо в ссылке. Для большей наглядности иконку можно заменить на логотип продукта:</p>
+<div mosaic-docs-example="link-application"></div>
+
+<p class="docs-markdown__p">Полезно определять, установлено ли десктопное приложение на устройстве пользователя. Если приложения нет, ссылка заменяется обычным текстом:</p>
+<table class="docs-markdown__table">
+<thead class="docs-markdown__thead">
+<tr class="docs-markdown__tr">
+<th align="center"><img class="docs-markdown__img" src="./assets/images/link/desktop-link-active.jpg" width="500"><span class="docs-markdown__caption"></span></th>
+<th align="center"><img class="docs-markdown__img" src="./assets/images/link/desktop-link-disabled.jpg" width="500"><span class="docs-markdown__caption"></span></th>
+</tr>
+</thead>
+<tbody class="docs-markdown__tbody"><tr class="docs-markdown__tr">
+<td class="docs-markdown__td" align="center">AI на Windows. Ссылки проектов активны и ведут в AI Desktop</td>
+<td class="docs-markdown__td" align="center">AI на macOS. Ссылки проектов отображаются как обычный текст.</td>
+</tr>
+</tbody></table>
+<p class="docs-markdown__p">Иногда указание продукта и добавление иконки может быть избыточным. Если вы уверены, что контекст позволяет понять назначение ссылки, эти элементы можно опустить.</p>
+<div class="docs-header-link docs-header-link_5">Псевдоссылка</div><p class="docs-markdown__p">Аналог кнопки. Не перезагружает страницу, не открывается в новой вкладке или по ссылке.</p>
+<div mosaic-docs-example="link-pseudo"></div>
+
+<p class="docs-markdown__p">Ссылка не должна вести на ту же страницу, на которой она находится. Такие ссылки бесполезны и только запутывают пользователя: кликнул, страница загрузилась и оказалось, что ты остался там же, где и был. Исключение — интерфейсы с обновляемым контентом, где ссылка дублирует обновление страницы.</p>
+<p class="docs-markdown__p">Используйте псевдоссылку, если нужно встроить действие в текст. Для остальных случаев используйте кнопку без фона.</p>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="ссылки-во-время-печати-страниц" id="ссылки-во-время-печати-страниц"></span>
+          Ссылки во время печати страниц
+        </div>
+      <p class="docs-markdown__p">При печати страницы текст ссылки может меняться на полный адрес ссылки. Это может быть полезно, если использование распечатанного варианта страницы — ожидаемый кейс. Например, можно сохранить ссылки на базы CVE в отчете сканирования уязвимостей. При этом ссылка должна быть без мусора: «<a class="docs-markdown__a" href="http://www%C2%BB" target="_blank">http://www»</a> можно опустить.</p>
+<p class="docs-markdown__p">В распечатанной странице :</p>
+<p class="docs-markdown__p">CVE-2019-1020010:
+cvedetails.com/cve/CVE-2019-1020010/</p>
+<div mosaic-docs-example="link-print"></div>
+
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="работа-в-браузере" id="работа-в-браузере"></span>
+          Работа в браузере
+        </div>
+      <p class="docs-markdown__p">Важно, чтобы ссылка не только выглядела как ссылка, но и работала как ссылка. Характеристики правильной ссылки:</p>
+<ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Можно скопировать адрес ссылки</li>
+<li class="docs-markdown__li">Можно открыть ссылку в новой вкладке через контекстное меню или Ctrl+клик</li>
+<li class="docs-markdown__li">В разметке использован тег <code class="docs-markdown__code">&lt;a&gt;</code></li>
+</ul>
+<table class="docs-markdown__table">
+<thead class="docs-markdown__thead">
+<tr class="docs-markdown__tr">
+<th align="center"><img class="docs-markdown__img" src="./assets/images/link/proper-link.jpg" width="500"><span class="docs-markdown__caption"></span></th>
+<th align="center"><img class="docs-markdown__img" src="./assets/images/link/improper-link.jpg" width="500"><span class="docs-markdown__caption"></span></th>
+</tr>
+</thead>
+<tbody class="docs-markdown__tbody"><tr class="docs-markdown__tr">
+<td class="docs-markdown__td" align="center"><strong>Правильная ссылка.</strong> Можно скопировать адрес, можно открыть в новой вкладке</td>
+<td class="docs-markdown__td" align="center"><strong>Неправильная ссылка.</strong> Браузер не определил элемент как ссылку</td>
+</tr>
+</tbody></table>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="фокус-и-работа-с-клавиатурой" id="фокус-и-работа-с-клавиатурой"></span>
+          Фокус и работа с клавиатурой
+        </div>
+      <table class="docs-markdown__table">
+<thead class="docs-markdown__thead">
+<tr class="docs-markdown__tr">
+<th class="docs-markdown__th">Клавиша</th>
+<th class="docs-markdown__th">Действие</th>
+</tr>
+</thead>
+<tbody class="docs-markdown__tbody"><tr class="docs-markdown__tr">
+<td class="docs-markdown__td"><span class="hot-key-Button">Space</span> \ <span class="hot-key-Button">⏎</span></td>
+<td class="docs-markdown__td">Переход по ссылке</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td"><span class="hot-key-Button">Shift</span> + <span class="hot-key-Button">F10</span></td>
+<td class="docs-markdown__td">Открыть контекстное меню (для ссылок)</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td"></td>
+<td class="docs-markdown__td">*Применимо только для Windows</td>
+</tr>
+</tbody></table>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="дизайн-и-анимация" id="дизайн-и-анимация"></span>
+          Дизайн и анимация
+        </div>
+      <div class="docs-header-link docs-header-link_5">Многострочные ссылки</div><p class="docs-markdown__p">В многострочных ссылках подчеркивается каждая строка:</p>
+<div mosaic-docs-example="link-multi-line"></div>
+
+<p class="docs-markdown__p">Важно, чтобы в многострочных ссылках ховер-зона захватывала межстрочный просвет.</p>
+<div class="docs-header-link docs-header-link_5">Синтаксис</div><p class="docs-markdown__p"><strong>Ссылки:</strong> что? где?
+<strong>Псевдоссылки:</strong> синтаксис кнопки.</p>
+<p class="docs-markdown__p">Связанные предлоги заключаются в ссылку:</p>
+<div mosaic-docs-example="link-prepositions"></div>
+
+<div class="docs-header-link docs-header-link_5">Иконки</div><p class="docs-markdown__p">По умолчанию — слева. Исключение — иконка внешнего перехода.</p>
+<p class="docs-markdown__p">Иконка входит в область клика, но не подчеркивается:</p>
+<div mosaic-docs-example="link-icons"></div>
+
+<div class="docs-header-link docs-header-link_5">Цвет</div><p class="docs-markdown__p">Синий или primary. Если primary цвет слишком яркий или бледный, стоит предусмотреть альтернативный цвет для ссылок (обычно — менее насыщенный и более тёмный вариант primary цвета).</p>
+<div mosaic-docs-example="link-color"></div>
+
+<div class="docs-header-link docs-header-link_5">Visited</div><p class="docs-markdown__p">По умолчанию посещенные ссылки никак не выделяются. Это традиция пошла из истоков интернета, когда гиперссылки были основным способом перемещения между страницами.</p>
+<p class="docs-markdown__p">Отмечать посещенные ссылки полезно в страницах-сборниках: подборках статей, списке чтения. На таких страницах выделение цветом отмечает прогресс чтения.</p>
+<div mosaic-docs-example="link-visited"></div>
+
+<div class="docs-header-link docs-header-link_5">Disabled</div><div mosaic-docs-example="link-disabled"></div>
+
+
+</div>
