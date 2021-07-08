@@ -1,0 +1,42 @@
+<span class="hljs-comment">// The example-module file will be auto-generated. As soon as the</span>
+<span class="hljs-comment">// examples are being compiled, the module file will be generated.</span>
+<span class="hljs-keyword">import</span> { EXAMPLE_COMPONENTS } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./example-module&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * Example data with information about component name, selector, files used in
+ * example, and path to examples.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleData</span> </span>{
+    <span class="hljs-comment">/** Description of the example. */</span>
+    <span class="hljs-attr">description</span>: <span class="hljs-built_in">string</span>;
+
+    <span class="hljs-comment">/** List of files that are part of this example. */</span>
+    exampleFiles: <span class="hljs-built_in">string</span>[];
+
+    <span class="hljs-comment">/** Selector name of the example component. */</span>
+    selectorName: <span class="hljs-built_in">string</span>;
+
+    <span class="hljs-comment">/** Name of the file that contains the example component. */</span>
+    indexFilename: <span class="hljs-built_in">string</span>;
+
+    <span class="hljs-comment">/** Names of the components being used in this example. */</span>
+    componentNames: <span class="hljs-built_in">string</span>[];
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">example: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-keyword">if</span> (!example || !EXAMPLE_COMPONENTS.hasOwnProperty(example)) {
+            <span class="hljs-keyword">return</span>;
+        }
+
+        <span class="hljs-keyword">const</span> {componentName, files, selector, primaryFile, additionalComponents, title} =
+            EXAMPLE_COMPONENTS[example];
+        <span class="hljs-keyword">const</span> exampleName = example.replace(<span class="hljs-regexp">/(?:^\w|\b\w)/g</span>, <span class="hljs-function">(<span class="hljs-params">letter</span>) =&gt;</span> letter.toUpperCase());
+
+        <span class="hljs-built_in">this</span>.exampleFiles = files;
+        <span class="hljs-built_in">this</span>.selectorName = selector;
+        <span class="hljs-built_in">this</span>.indexFilename = primaryFile;
+        <span class="hljs-comment">// tslint:disable-next-line:prefer-template</span>
+        <span class="hljs-built_in">this</span>.description = title || exampleName.replace(<span class="hljs-regexp">/[\-]+/g</span>, <span class="hljs-string">&#x27; &#x27;</span>) + <span class="hljs-string">&#x27; Example&#x27;</span>;
+        <span class="hljs-built_in">this</span>.componentNames = [componentName, ...additionalComponents];
+    }
+}
