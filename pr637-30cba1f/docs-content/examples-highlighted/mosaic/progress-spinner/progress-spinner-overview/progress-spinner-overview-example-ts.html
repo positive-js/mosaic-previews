@@ -1,0 +1,27 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+
+<span class="hljs-keyword">const</span> INTERVAL: <span class="hljs-built_in">number</span> = <span class="hljs-number">300</span>;
+<span class="hljs-keyword">const</span> STEP: <span class="hljs-built_in">number</span> = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> MAX_PERCENT: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>;
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic progress spinner
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;progress-spinner-overview-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;progress-spinner-overview-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;progress-spinner-overview-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProgressSpinnerOverviewExample</span> </span>{
+    <span class="hljs-attr">percent</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+    intervalId: <span class="hljs-built_in">number</span>;
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.percent = (<span class="hljs-built_in">this</span>.percent + STEP) % (MAX_PERCENT + STEP), INTERVAL);
+    }
+
+    <span class="hljs-function"><span class="hljs-title">ngOnDestroy</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-built_in">clearInterval</span>(<span class="hljs-built_in">this</span>.intervalId);
+    }
+}
