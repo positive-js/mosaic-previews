@@ -1,0 +1,22 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic tags list
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;tags-list-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;tags-list-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;tags-list-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TagsListExample</span> </span>{
+    simpleTags = [<span class="hljs-string">&#x27;tag&#x27;</span>, <span class="hljs-string">&#x27;tag1&#x27;</span>, <span class="hljs-string">&#x27;tag2&#x27;</span>, <span class="hljs-string">&#x27;tag3&#x27;</span>, <span class="hljs-string">&#x27;tag4&#x27;</span>];
+
+    onRemoveTag(tag: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span> {
+        <span class="hljs-keyword">const</span> index = <span class="hljs-built_in">this</span>.simpleTags.indexOf(tag);
+
+        <span class="hljs-keyword">if</span> (index &gt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-built_in">this</span>.simpleTags.splice(index, <span class="hljs-number">1</span>);
+        }
+    }
+}
