@@ -1,1 +1,1 @@
-cb701484 fix(badge): fix badge font settings in docs
+e50727d8 fix(mosaic-moment-adapter): fixed formats for seconds and minutes and added tests for it (#UIM-689)
