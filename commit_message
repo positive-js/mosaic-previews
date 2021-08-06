@@ -1,1 +1,1 @@
-a52c5424 fix(navbar): divider height is 0 (#UIM-705)
+2ec9e489 fix(navbar): added selector [mc-navbar-item] for use with link (#UIM-704)
