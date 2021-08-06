@@ -1,1 +1,1 @@
-2ec9e489 fix(navbar): added selector [mc-navbar-item] for use with link (#UIM-704)
+9a6e0b22 fix(navbar): added [collapsable] property for mc-navbar-item (#UIM-707)
