@@ -1,1 +1,1 @@
-c827acbc fixed arrow event and FF bug with focus
+c3ee9a7f fix(navbar): errors in console if use [expanded] (UIM-701)
