@@ -1,0 +1,156 @@
+<div class="docs-width docs-margin">
+    <div class="mc-headline">Вариация с текстами ошибок</div>
+
+    <form class="mc-form-vertical" [formGroup]="feedbackFormWithHints" novalidate>
+        <div class="mc-form__fieldset">
+            <div class="mc-form__legend">Форма обратной связи</div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Имя</label>
+
+                <mc-form-field class="mc-form__control">
+                    <input mcInput formControlName="firstName">
+                    <mc-hint *ngIf="feedbackFormWithHints.controls.firstName.invalid">Укажите ваше имя</mc-hint>
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Фамилия</label>
+
+                <mc-form-field class="mc-form__control">
+                    <input mcInput formControlName="lastName">
+                    <mc-hint *ngIf="feedbackFormWithHints.controls.lastName.invalid">Укажите вашу фамилию</mc-hint>
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Отчество</label>
+
+                <mc-form-field class="mc-form__control">
+                    <input mcInput formControlName="thirdName" placeholder="Необязательно">
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Адрес эл. почты</label>
+
+                <mc-form-field class="mc-form__control">
+                    <input mcInput formControlName="email">
+                    <mc-hint *ngIf="feedbackFormWithHints.controls.email.invalid">Оставьте свой адрес эл. почты</mc-hint>
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Причина обращения</label>
+
+                <mc-form-field class="mc-form__control">
+                    <mc-select formControlName="reason">
+                        <mc-option value="1">1</mc-option>
+                        <mc-option value="2">2</mc-option>
+                        <mc-option value="3">3</mc-option>
+                    </mc-select>
+                    <mc-hint *ngIf="feedbackFormWithHints.controls.reason.invalid">Укажите причину обращения</mc-hint>
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Ваша оценка</label>
+
+                <mc-form-field class="mc-form__control">
+                    <mc-select formControlName="rating">
+                        <mc-option value="1">1</mc-option>
+                        <mc-option value="2">2</mc-option>
+                        <mc-option value="3">3</mc-option>
+                    </mc-select>
+
+                    <mc-hint *ngIf="feedbackFormWithHints.controls.rating.invalid">Дайте оценку работы наших специалистов</mc-hint>
+                </mc-form-field>
+            </div>
+
+            <div class="mc-form__row">
+                <label class="mc-form__label">Комментарий</label>
+
+                <mc-form-field class="mc-form__control">
+                    <textarea mcTextarea formControlName="comment"></textarea>
+                </mc-form-field>
+            </div>
+        </div>
+
+        <div class="mc-form__row">
+            <button class="flex-40" mc-button [color]="'primary'" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+
+<div class="docs-width docs-margin">
+    <div class="docs-width">
+        <div class="mc-headline">Вариация без текста ошибок</div>
+
+        <form class="mc-form-vertical" [formGroup]="feedbackForm" novalidate>
+            <div class="mc-form__legend">Форма обратной связи</div>
+
+            <div class="mc-form__fieldset">
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Имя</label>
+                    <mc-form-field class="mc-form__control">
+                        <input mcInput formControlName="firstName">
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Фамилия</label>
+                    <mc-form-field class="mc-form__control">
+                        <input mcInput formControlName="lastName">
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Отчество</label>
+                    <mc-form-field class="mc-form__control">
+                        <input mcInput formControlName="thirdName" placeholder="Необязательно">
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Адрес эл. почты</label>
+                    <mc-form-field class="mc-form__control">
+                        <input mcInput formControlName="email">
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Причина обращения</label>
+                    <mc-form-field class="mc-form__control">
+                        <mc-select formControlName="reason">
+                            <mc-option value="1">1</mc-option>
+                            <mc-option value="2">2</mc-option>
+                            <mc-option value="3">3</mc-option>
+                        </mc-select>
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Ваша оценка</label>
+                    <mc-form-field class="mc-form__control">
+                        <mc-select formControlName="rating">
+                            <mc-option value="1">1</mc-option>
+                            <mc-option value="2">2</mc-option>
+                            <mc-option value="3">3</mc-option>
+                        </mc-select>
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <label class="mc-form__label">Комментарий</label>
+                    <mc-form-field class="mc-form__control">
+                        <textarea mcTextarea formControlName="comment"></textarea>
+                    </mc-form-field>
+                </div>
+
+                <div class="mc-form__row">
+                    <button class="flex-40" mc-button [color]="'primary'" type="submit">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
