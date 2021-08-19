@@ -1,0 +1,26 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker__controls&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span> [(<span class="hljs-attr">value</span>)]=<span class="hljs-string">&quot;timeFormat&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;HH:mm&quot;</span>&gt;</span>HH:mm<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;HH:mm:ss&quot;</span>&gt;</span>HH:mm:ss<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-checkbox</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;isIconVisible&quot;</span>&gt;</span>Show icon<span class="hljs-tag">&lt;/<span class="hljs-name">mc-checkbox</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-checkbox</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;isDisabled&quot;</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-name">mc-checkbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-element&quot;</span>
+        <span class="hljs-attr">mcTooltip</span>=<span class="hljs-string">&quot;Только цифры&quot;</span>
+        #<span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;mcTooltip&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">&quot;isIconVisible&quot;</span> <span class="hljs-attr">mcPrefix</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">&quot;mc-clock_16&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+               [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;value&quot;</span>
+               [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">&quot;isDisabled&quot;</span>
+               [<span class="hljs-attr">format</span>]=<span class="hljs-string">&quot;timeFormat&quot;</span>
+               [<span class="hljs-attr">mcValidationTooltip</span>]=<span class="hljs-string">&quot;tooltip&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
