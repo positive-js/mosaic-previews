@@ -1,0 +1,38 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-element&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;Time&quot;</span>
+               <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-35 mc-form-label&quot;</span>&gt;</span>Выберите время между min и max<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>
+            <span class="hljs-attr">mcTooltip</span>=<span class="hljs-string">&quot;Только цифры&quot;</span>
+            #<span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;mcTooltip&quot;</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mcPrefix</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">&quot;mc-clock_16&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+                   <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Time&quot;</span>
+                   [<span class="hljs-attr">min</span>]=<span class="hljs-string">&quot;getStartTime()&quot;</span>
+                   [<span class="hljs-attr">max</span>]=<span class="hljs-string">&quot;getEndTime()&quot;</span>
+                   [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;time&quot;</span>
+                   [<span class="hljs-attr">mcValidationTooltip</span>]=<span class="hljs-string">&quot;tooltip&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-element&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;startTime&quot;</span>
+               <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-35 mc-form-label&quot;</span>&gt;</span>min<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+                   <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;startTime&quot;</span>
+                   [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;startTime&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-timepicker-element&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;endTime&quot;</span>
+               <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flex-35 mc-form-label&quot;</span>&gt;</span>max<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcTimepicker</span>
+                   <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;endTime&quot;</span>
+                   [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;endTime&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
