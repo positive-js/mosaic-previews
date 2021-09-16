@@ -1,0 +1,2022 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs-api">
+    <h2>
+        API reference for Angular CDK a11y
+    </h2>
+
+    <p class="docs-api-module-import">
+        <code>
+          import {} from '@angular/cdk/a11y';
+        </code>
+    </p><h3 id="classes" class="docs-header-link docs-api-h3">
+      <span header-link="classes"></span>
+      Classes
+    </h3>
+    
+      
+
+<h4 id="ActiveDescendantKeyManager" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="ActiveDescendantKeyManager"></span>
+    <code>ActiveDescendantKeyManager</code>
+    
+    <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="cdk/a11y/api#ListKeyManager" class="docs-api-class-extends-type">
+      ListKeyManager
+    </a>
+  </span>
+    
+</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItem: T | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItemIndex: number</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>change: Subject&lt;number&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits whenever the active item of the list manager changes.</p>
+</td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>previousActiveItemIndex: -1</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>tabOut: Subject&lt;void&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits any time the TAB key is pressed, so components can react
+when focus is shifted off of the list.</p>
+</td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onKeydown
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item depending on the key event passed in.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                event</p>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Keyboard event to be used for determining which element should be active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item to the item at the specified index and adds the
+active styles to the newly active item. Also removes active styles
+from the previously active item.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                index</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Index of the item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item to the item to the specified one and adds the
+active styles to the it. Also removes active styles from the
+previously active item.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                item</p>
+            <code class="docs-api-method-parameter-type">T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setFirstItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setLastItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                index</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Index of the item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active item without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                item</p>
+            <code class="docs-api-method-parameter-type">number | T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Item to be set as active or index Index of the item to be set as active..</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withHorizontalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures the key manager to move the selection horizontally.
+Passing in <code>null</code> will disable horizontal movement.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                direction</p>
+            <code class="docs-api-method-parameter-type">&quot;ltr&quot; | &quot;rtl&quot;</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Direction in which the selection can be moved.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withScrollSize
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                scrollSize</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withTypeAhead
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on typeahead mode which allows users to set the active item by typing.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                searchLetterIndex</p>
+            <code class="docs-api-method-parameter-type">number = 0</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>letter index for incremental search, if is -1 search is disabled</p>
+
+            </p>
+        </td>
+    </tr>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                debounceInterval</p>
+            <code class="docs-api-method-parameter-type">number = 200</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Time to wait after the last keystroke before setting the active item.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withVerticalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures whether the key manager should be able to move the selection vertically.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                enabled</p>
+            <code class="docs-api-method-parameter-type">boolean = true</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Whether vertical selection should be enabled.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withWrap
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on wrapping mode, which ensures that the active item will wrap to
+the other end of list when there are no more items in the given direction.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+
+
+
+    
+      
+
+<h4 id="FocusKeyManager" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="FocusKeyManager"></span>
+    <code>FocusKeyManager</code>
+    
+    <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="cdk/a11y/api#ListKeyManager" class="docs-api-class-extends-type">
+      ListKeyManager
+    </a>
+  </span>
+    
+</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItem: T | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItemIndex: number</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>change: Subject&lt;number&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits whenever the active item of the list manager changes.</p>
+</td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>previousActiveItemIndex: -1</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>tabOut: Subject&lt;void&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits any time the TAB key is pressed, so components can react
+when focus is shifted off of the list.</p>
+</td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onKeydown
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item depending on the key event passed in.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                event</p>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Keyboard event to be used for determining which element should be active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item or index to the item that is specified and focuses it.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                item</p>
+            <code class="docs-api-method-parameter-type">number | T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setFirstItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setFocusOrigin
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the focus origin that will be passed in to the items for any subsequent <code>focus</code> calls.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                origin</p>
+            <code class="docs-api-method-parameter-type">FocusOrigin</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Focus origin to be used when focusing items.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setLastItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                index</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Index of the item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active item without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                item</p>
+            <code class="docs-api-method-parameter-type">number | T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Item to be set as active or index Index of the item to be set as active..</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withHorizontalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures the key manager to move the selection horizontally.
+Passing in <code>null</code> will disable horizontal movement.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                direction</p>
+            <code class="docs-api-method-parameter-type">&quot;ltr&quot; | &quot;rtl&quot;</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Direction in which the selection can be moved.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withScrollSize
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                scrollSize</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withTypeAhead
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on typeahead mode which allows users to set the active item by typing.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                searchLetterIndex</p>
+            <code class="docs-api-method-parameter-type">number = 0</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>letter index for incremental search, if is -1 search is disabled</p>
+
+            </p>
+        </td>
+    </tr>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                debounceInterval</p>
+            <code class="docs-api-method-parameter-type">number = 200</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Time to wait after the last keystroke before setting the active item.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withVerticalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures whether the key manager should be able to move the selection vertically.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                enabled</p>
+            <code class="docs-api-method-parameter-type">boolean = true</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Whether vertical selection should be enabled.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withWrap
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on wrapping mode, which ensures that the active item will wrap to
+the other end of list when there are no more items in the given direction.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+
+
+
+    
+      
+
+<h4 id="ListKeyManager" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="ListKeyManager"></span>
+    <code>ListKeyManager</code>
+    
+</h4><p class="docs-api-class-description"><p>This class manages keyboard events for selectable lists. If you pass it a query list
+of items, it will set the active item correctly when arrow events occur.</p>
+</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItem: T | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>activeItemIndex: number</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>change: Subject&lt;number&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits whenever the active item of the list manager changes.</p>
+</td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>previousActiveItemIndex: -1</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>tabOut: Subject&lt;void&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Stream that emits any time the TAB key is pressed, so components can react
+when focus is shifted off of the list.</p>
+</td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">onKeydown
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item depending on the key event passed in.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                event</p>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Keyboard event to be used for determining which element should be active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Sets the active item to the item at the index specified.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                index</p>
+            <code class="docs-api-method-parameter-type">number | T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>The index of the item to be set as active or item The item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setFirstItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setLastItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setNextPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousItemActive
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setPreviousPageItemActive
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delta</p>
+            <code class="docs-api-method-parameter-type">number = this.scrollSize</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                index</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Index of the item to be set as active.</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateActiveItem
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Allows setting the active item without any other effects.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                item</p>
+            <code class="docs-api-method-parameter-type">number | T</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Item to be set as active or index Index of the item to be set as active..</p>
+
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withHorizontalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures the key manager to move the selection horizontally.
+Passing in <code>null</code> will disable horizontal movement.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                direction</p>
+            <code class="docs-api-method-parameter-type">&quot;ltr&quot; | &quot;rtl&quot;</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Direction in which the selection can be moved.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withScrollSize
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                scrollSize</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withTypeAhead
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on typeahead mode which allows users to set the active item by typing.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                searchLetterIndex</p>
+            <code class="docs-api-method-parameter-type">number = 0</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>letter index for incremental search, if is -1 search is disabled</p>
+
+            </p>
+        </td>
+    </tr>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                debounceInterval</p>
+            <code class="docs-api-method-parameter-type">number = 200</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Time to wait after the last keystroke before setting the active item.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withVerticalOrientation
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Configures whether the key manager should be able to move the selection vertically.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                enabled</p>
+            <code class="docs-api-method-parameter-type">boolean = true</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                <p>Whether vertical selection should be enabled.</p>
+
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">withWrap
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Turns on wrapping mode, which ensures that the active item will wrap to
+the other end of list when there are no more items in the given direction.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">this</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+
+
+
+    <h3 id="interfaces" class="docs-header-link docs-api-h3">
+      <span header-link="interfaces"></span>
+      Interfaces
+    </h3>
+    
+      
+
+<h4 id="Highlightable" class="docs-header-link docs-api-h4 docs-api-interface-name">
+    <span header-link="Highlightable"></span>
+    <code>Highlightable</code>
+</h4><p class="docs-api-interface-description"><p>This is the interface for highlightable items (used by the ActiveDescendantKeyManager).
+Each item must know how to style itself as active or inactive and whether or not it is
+currently disabled.</p>
+</p>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setActiveStyles
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">setInactiveStyles
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+
+
+
+    
+      
+
+<h4 id="IFocusableOption" class="docs-header-link docs-api-h4 docs-api-interface-name">
+    <span header-link="IFocusableOption"></span>
+    <code>IFocusableOption</code>
+</h4><p class="docs-api-interface-description"><p>This is the interface for focusable items (used by the FocusKeyManager).
+Each item must know how to focus itself, whether or not it is currently disabled
+and be able to supply it&#39;s label.</p>
+</p>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                origin<span class="docs-api-method-parameter-optional-marker">?</span></p>
+            <code class="docs-api-method-parameter-type">FocusOrigin</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+
+
+
+    
+      
+
+<h4 id="ListKeyManagerOption" class="docs-header-link docs-api-h4 docs-api-interface-name">
+    <span header-link="ListKeyManagerOption"></span>
+    <code>ListKeyManagerOption</code>
+</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>disabled: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getLabel
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">string</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+
+
+
+    </div>
