@@ -1,1 +1,1 @@
-4644a5c5 fix(datepicker): emit event after clean, correct decrement for year (#UIM-741, #UIM-765)
+6fb4b22e fix(tree): emit selectionChange event without selection (#UIM-742)
