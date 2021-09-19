@@ -1,1 +1,1 @@
-6fb4b22e fix(tree): emit selectionChange event without selection (#UIM-742)
+a1ae6bf2 fix: package.json & yarn.lock to reduce vulnerabilities
