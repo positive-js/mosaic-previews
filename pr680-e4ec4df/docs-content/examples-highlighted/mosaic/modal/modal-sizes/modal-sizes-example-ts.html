@@ -1,0 +1,71 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { McButton } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/button&#x27;</span>;
+<span class="hljs-keyword">import</span> { McModalService, ModalSize } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/modal&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Sizes Modal
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;modal-sizes-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;modal-sizes-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;modal-sizes-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModalSizesExample</span> </span>{
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;small&#x27;</span>) smallButton: McButton;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;default&#x27;</span>) defaultButton: McButton;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;large&#x27;</span>) largeButton: McButton;
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;custom&#x27;</span>) customButton: McButton;
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>)</span> {}
+
+    <span class="hljs-function"><span class="hljs-title">showSmallModal</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-built_in">this</span>.modalService.confirm({
+            <span class="hljs-attr">mcSize</span>: ModalSize.Small,
+            <span class="hljs-attr">mcContent</span>   : <span class="hljs-string">&#x27;Save changes?&#x27;</span>,
+            <span class="hljs-attr">mcOkText</span>    : <span class="hljs-string">&#x27;Save&#x27;</span>,
+            <span class="hljs-attr">mcCancelText</span>: <span class="hljs-string">&#x27;Cancel&#x27;</span>,
+            <span class="hljs-attr">mcOnOk</span>      : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;OK&#x27;</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.smallButton.focusViaKeyboard());
+    }
+
+    <span class="hljs-function"><span class="hljs-title">showDefaultModal</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-built_in">this</span>.modalService.confirm({
+            <span class="hljs-attr">mcContent</span>   : <span class="hljs-string">&#x27;Save changes?&#x27;</span>,
+            <span class="hljs-attr">mcOkText</span>    : <span class="hljs-string">&#x27;Save&#x27;</span>,
+            <span class="hljs-attr">mcCancelText</span>: <span class="hljs-string">&#x27;Cancel&#x27;</span>,
+            <span class="hljs-attr">mcOnOk</span>      : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;OK&#x27;</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.defaultButton.focusViaKeyboard());
+    }
+
+    <span class="hljs-function"><span class="hljs-title">showLargeModal</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-built_in">this</span>.modalService.confirm({
+            <span class="hljs-attr">mcSize</span>: ModalSize.Large,
+            <span class="hljs-attr">mcContent</span>   : <span class="hljs-string">&#x27;Save changes?&#x27;</span>,
+            <span class="hljs-attr">mcOkText</span>    : <span class="hljs-string">&#x27;Save&#x27;</span>,
+            <span class="hljs-attr">mcCancelText</span>: <span class="hljs-string">&#x27;Cancel&#x27;</span>,
+            <span class="hljs-attr">mcOnOk</span>      : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Delete&#x27;</span>),
+            <span class="hljs-attr">mcOnCancel</span>  : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Cancel&#x27;</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.largeButton.focusViaKeyboard());
+    }
+
+    <span class="hljs-function"><span class="hljs-title">showCustomModal</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-keyword">const</span> modalRef = <span class="hljs-built_in">this</span>.modalService.confirm({
+            <span class="hljs-attr">mcWidth</span>     : <span class="hljs-string">&#x27;600px&#x27;</span>,
+            <span class="hljs-attr">mcContent</span>   : <span class="hljs-string">&#x27;Save changes?&#x27;</span>,
+            <span class="hljs-attr">mcOkText</span>    : <span class="hljs-string">&#x27;Save&#x27;</span>,
+            <span class="hljs-attr">mcCancelText</span>: <span class="hljs-string">&#x27;Cancel&#x27;</span>,
+            <span class="hljs-attr">mcOnOk</span>      : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Delete&#x27;</span>),
+            <span class="hljs-attr">mcOnCancel</span>  : <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Cancel&#x27;</span>)
+        });
+
+        modalRef.afterClose.subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.customButton.focusViaKeyboard());
+    }
+}
