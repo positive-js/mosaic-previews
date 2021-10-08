@@ -1,1 +1,1 @@
-b3788d32 fix(list): unnecessary focus on scroll by click (#UIM-771)
+8a1da882 fix(tags): tag-input affects another focused input (#UIM-723)
