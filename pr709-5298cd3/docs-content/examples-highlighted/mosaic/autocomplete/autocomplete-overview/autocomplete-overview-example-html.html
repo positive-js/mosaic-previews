@@ -1,0 +1,8 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Enter countries to see autocomplete<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">mcInput</span> [<span class="hljs-attr">mcAutocomplete</span>]=<span class="hljs-string">&quot;auto&quot;</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">&quot;control&quot;</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-autocomplete</span> #<span class="hljs-attr">auto</span>=<span class="hljs-string">&quot;mcAutocomplete&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">&quot;let option of filteredOptions | async&quot;</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">&quot;option&quot;</span>&gt;</span>{{ option }}<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-autocomplete</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
