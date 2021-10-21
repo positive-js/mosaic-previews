@@ -1,0 +1,163 @@
+<span class="hljs-comment">/* tslint:disable:no-reserved-keywords object-literal-key-quotes */</span>
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { FlatTreeControl, McTreeFlatDataSource, McTreeFlattener } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/tree&#x27;</span>;
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileNode</span> </span>{
+    <span class="hljs-attr">children</span>: FileNode[];
+    name: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">type</span>: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-comment">/** Flat node with expandable and level information */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileFlatNode</span> </span>{
+    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">type</span>: <span class="hljs-built_in">any</span>;
+    level: <span class="hljs-built_in">number</span>;
+    expandable: <span class="hljs-built_in">boolean</span>;
+    parent: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-comment">/**
+ * Build the file structure tree. The `value` is the Json object, or a sub-tree of a Json object.
+ * The return value is the list of `FileNode`.
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildFileTree</span>(<span class="hljs-params">value: <span class="hljs-built_in">any</span>, level: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">FileNode</span>[] </span>{
+    <span class="hljs-keyword">const</span> data: <span class="hljs-built_in">any</span>[] = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> k <span class="hljs-keyword">of</span> <span class="hljs-built_in">Object</span>.keys(value)) {
+        <span class="hljs-keyword">const</span> v = value[k];
+        <span class="hljs-keyword">const</span> node = <span class="hljs-keyword">new</span> FileNode();
+
+        node.name = <span class="hljs-string">`<span class="hljs-subst">${k}</span>`</span>;
+
+        <span class="hljs-keyword">if</span> (v === <span class="hljs-literal">null</span> || v === <span class="hljs-literal">undefined</span>) {
+            <span class="hljs-comment">// no action</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;object&#x27;</span>) {
+            node.children = buildFileTree(v, level + <span class="hljs-number">1</span>);
+        } <span class="hljs-keyword">else</span> {
+            node.type = v;
+        }
+
+        data.push(node);
+    }
+
+    <span class="hljs-keyword">return</span> data;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> DATA_OBJECT = {
+    <span class="hljs-attr">docs</span>: <span class="hljs-string">&#x27;app&#x27;</span>,
+    <span class="hljs-attr">src</span>: {
+        <span class="hljs-attr">cdk</span>: {
+            <span class="hljs-attr">a11ly</span>: {
+                <span class="hljs-string">&#x27;aria-describer&#x27;</span>: {
+                    <span class="hljs-string">&#x27;aria-describer&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+                    <span class="hljs-string">&#x27;aria-describer.spec&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+                    <span class="hljs-string">&#x27;aria-reference&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+                    <span class="hljs-string">&#x27;aria-reference.spec&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>
+                },
+                <span class="hljs-string">&#x27;focus-monitor&#x27;</span>: {
+                    <span class="hljs-string">&#x27;focus-monitor&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+                    <span class="hljs-string">&#x27;focus-monitor.spec&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>
+                }
+            }
+        },
+        <span class="hljs-attr">documentation</span>: {
+            <span class="hljs-attr">source</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-attr">tools</span>: <span class="hljs-string">&#x27;&#x27;</span>
+        },
+        <span class="hljs-attr">mosaic</span>: {
+            <span class="hljs-attr">autocomplete</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-attr">button</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-string">&#x27;button-toggle&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-attr">index</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+            <span class="hljs-attr">package</span>: <span class="hljs-string">&#x27;json&#x27;</span>,
+            <span class="hljs-attr">version</span>: <span class="hljs-string">&#x27;ts&#x27;</span>
+        },
+        <span class="hljs-string">&#x27;mosaic-dev&#x27;</span>: {
+            <span class="hljs-attr">alert</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-attr">badge</span>: <span class="hljs-string">&#x27;&#x27;</span>
+        },
+        <span class="hljs-string">&#x27;mosaic-examples&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+        <span class="hljs-string">&#x27;mosaic-moment-adapter&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+        <span class="hljs-attr">README</span>: <span class="hljs-string">&#x27;md&#x27;</span>,
+        <span class="hljs-string">&#x27;tsconfig.build&#x27;</span>: <span class="hljs-string">&#x27;json&#x27;</span>,
+        <span class="hljs-attr">wallabyTest</span>: <span class="hljs-string">&#x27;ts&#x27;</span>
+    },
+    <span class="hljs-attr">scripts</span>: {
+        <span class="hljs-attr">deploy</span>: {
+            <span class="hljs-string">&#x27;cleanup-preview&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>,
+            <span class="hljs-string">&#x27;publish-artifacts&#x27;</span>: <span class="hljs-string">&#x27;sh&#x27;</span>,
+            <span class="hljs-string">&#x27;publish-docs&#x27;</span>: <span class="hljs-string">&#x27;sh&#x27;</span>,
+            <span class="hljs-string">&#x27;publish-docs-preview&#x27;</span>: <span class="hljs-string">&#x27;ts&#x27;</span>
+        },
+        <span class="hljs-string">&#x27;tsconfig.deploy&#x27;</span>: <span class="hljs-string">&#x27;json&#x27;</span>
+    },
+    <span class="hljs-attr">tests</span>: <span class="hljs-string">&#x27;&#x27;</span>
+};
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic tree
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;tree-overview-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;tree-overview-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;tree-overview-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeOverviewExample</span> </span>{
+    <span class="hljs-attr">treeControl</span>: FlatTreeControl&lt;FileFlatNode&gt;;
+    treeFlattener: McTreeFlattener&lt;FileNode, FileFlatNode&gt;;
+
+    dataSource: McTreeFlatDataSource&lt;FileNode, FileFlatNode&gt;;
+
+    modelValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-built_in">this</span>.treeFlattener = <span class="hljs-keyword">new</span> McTreeFlattener(
+            <span class="hljs-built_in">this</span>.transformer, <span class="hljs-built_in">this</span>.getLevel, <span class="hljs-built_in">this</span>.isExpandable, <span class="hljs-built_in">this</span>.getChildren
+        );
+
+        <span class="hljs-built_in">this</span>.treeControl = <span class="hljs-keyword">new</span> FlatTreeControl&lt;FileFlatNode&gt;(
+            <span class="hljs-built_in">this</span>.getLevel, <span class="hljs-built_in">this</span>.isExpandable, <span class="hljs-built_in">this</span>.getValue, <span class="hljs-built_in">this</span>.getViewValue
+        );
+        <span class="hljs-built_in">this</span>.dataSource = <span class="hljs-keyword">new</span> McTreeFlatDataSource(<span class="hljs-built_in">this</span>.treeControl, <span class="hljs-built_in">this</span>.treeFlattener);
+
+        <span class="hljs-built_in">this</span>.dataSource.data = buildFileTree(DATA_OBJECT, <span class="hljs-number">0</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-title">hasChild</span>(<span class="hljs-params">_: <span class="hljs-built_in">number</span>, nodeData: FileFlatNode</span>)</span> { <span class="hljs-keyword">return</span> nodeData.expandable; }
+
+    <span class="hljs-keyword">private</span> transformer = <span class="hljs-function">(<span class="hljs-params">node: FileNode, level: <span class="hljs-built_in">number</span>, parent: <span class="hljs-built_in">any</span></span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> flatNode = <span class="hljs-keyword">new</span> FileFlatNode();
+
+        flatNode.name = node.name;
+        flatNode.parent = parent;
+        flatNode.type = node.type;
+        flatNode.level = level;
+        flatNode.expandable = !!node.children;
+
+        <span class="hljs-keyword">return</span> flatNode;
+    }
+
+    <span class="hljs-keyword">private</span> getLevel = <span class="hljs-function">(<span class="hljs-params">node: FileFlatNode</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> node.level;
+    }
+
+    <span class="hljs-keyword">private</span> isExpandable = <span class="hljs-function">(<span class="hljs-params">node: FileFlatNode</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> node.expandable;
+    }
+
+    <span class="hljs-keyword">private</span> getChildren = (node: FileNode): FileNode[] =&gt; {
+        <span class="hljs-keyword">return</span> node.children;
+    }
+
+    <span class="hljs-keyword">private</span> getValue = (node: FileNode): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> {
+        <span class="hljs-keyword">return</span> node.name;
+    }
+
+    <span class="hljs-keyword">private</span> getViewValue = (node: FileNode): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> nodeType = node.type ? <span class="hljs-string">`.<span class="hljs-subst">${node.<span class="hljs-keyword">type</span>}</span>`</span> : <span class="hljs-string">&#x27;&#x27;</span>;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${node.name}</span><span class="hljs-subst">${nodeType}</span>`</span>;
+    }
+}
