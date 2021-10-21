@@ -1,0 +1,30 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-controls&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-group</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;layoutHorizontalAlignment&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>Horizontal<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-start&quot;</span>&gt;</span>start<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-center&quot;</span>&gt;</span>center<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-end&quot;</span>&gt;</span>end<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-space-around&quot;</span>&gt;</span>space-around<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-space-between&quot;</span>&gt;</span>space-between<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-group</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-group</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;layoutVerticalAlignment&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>Vertical<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>(none)<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-start&quot;</span>&gt;</span>start<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-center&quot;</span>&gt;</span>center<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-end&quot;</span>&gt;</span>end<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-radio-button</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;-stretch&quot;</span>&gt;</span>stretch<span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-radio-group</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;layout-padding&quot;</span>&gt;</span>class: layout-align{{ layoutHorizontalAlignment }}{{layoutVerticalAlignment}}<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container block layout-row layout-align{{ layoutHorizontalAlignment }}{{layoutVerticalAlignment}}&quot;</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;block&quot;</span>&gt;</span>block 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;block&quot;</span>&gt;</span>block 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;block&quot;</span>&gt;</span>block 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
