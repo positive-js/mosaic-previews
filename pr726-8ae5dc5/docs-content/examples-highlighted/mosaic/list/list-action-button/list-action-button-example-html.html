@@ -1,0 +1,22 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-list-selection</span>
+    [<span class="hljs-attr">autoSelect</span>]=<span class="hljs-string">&quot;false&quot;</span>
+    [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-list-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">&quot;let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]&quot;</span>
+                    <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Item {{ item }}&quot;</span>&gt;</span>
+        Item {{ item }}
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option-action</span>
+            <span class="hljs-attr">mcTooltip</span>=<span class="hljs-string">&quot;Tooltip text&quot;</span>
+            [<span class="hljs-attr">mcPlacement</span>]=<span class="hljs-string">&quot;&#x27;right&#x27;&quot;</span>
+            [<span class="hljs-attr">mcDropdownTriggerFor</span>]=<span class="hljs-string">&quot;dropdown&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-option-action</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-list-option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-list-selection</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Selected: {{ selected }}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-dropdown</span> #<span class="hljs-attr">dropdown</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-dropdown-item</span>&gt;</span>item 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-dropdown-item</span>&gt;</span>item 2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-dropdown-item</span>&gt;</span>item 3<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-dropdown</span>&gt;</span>
