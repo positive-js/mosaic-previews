@@ -1,0 +1,65 @@
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Flex layout
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;layout-flex-offsets-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;layout-flex-offsets-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;layout-flex-offsets-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LayoutFlexOffsetsExample</span> </span>{
+    <span class="hljs-attr">selectedSize</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;flex-10&#x27;</span>;
+    selectedOffset: <span class="hljs-built_in">string</span> = <span class="hljs-string">&#x27;flex-offset-10&#x27;</span>;
+
+    flexSizes = [
+        <span class="hljs-string">&#x27;flex-0&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-5&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-10&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-15&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-20&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-25&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-30&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-33&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-35&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-40&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-45&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-50&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-60&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-65&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-66&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-70&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-75&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-80&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-85&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-90&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-95&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-100&#x27;</span>
+    ];
+
+    flexOffsets = [
+        <span class="hljs-string">&#x27;flex-offset-0&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-5&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-10&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-15&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-20&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-25&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-30&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-33&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-35&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-40&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-45&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-50&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-60&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-65&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-66&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-70&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-75&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-80&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-85&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-90&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-95&#x27;</span>,
+        <span class="hljs-string">&#x27;flex-offset-100&#x27;</span>
+    ];
+}
