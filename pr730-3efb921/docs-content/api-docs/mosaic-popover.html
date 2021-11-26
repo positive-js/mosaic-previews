@@ -1,0 +1,1445 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="docs-api">
+    <h2>
+        API reference for Angular Mosaic popover
+    </h2>
+
+    <p class="docs-api-module-import">
+        <code>
+          import {McPopoverModule} from '@angular/mosaic/popover';
+        </code>
+    </p><h3 id="classes" class="docs-header-link docs-api-h3">
+      <span header-link="classes"></span>
+      Classes
+    </h3>
+    
+      
+
+<h4 id="McPopoverComponent" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="McPopoverComponent"></span>
+    <code>McPopoverComponent</code>
+    
+    <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="components/core/api#McPopUp" class="docs-api-class-extends-type">
+      McPopUp
+    </a>
+  </span>
+    
+</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>classMap: {}</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>closeOnInteraction: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>content: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>footer: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>header: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>onHideSubject: Subject&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"><p>Subject for notifying that the tooltip has been hidden from the view</p>
+</td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>prefix: &#39;mc-popover&#39;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>visibility: PopUpVisibility.Initial</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>visibleChange: EventEmitter&lt;boolean&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>warning: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">afterHidden
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Returns an observable that notifies when the tooltip has been hidden from view.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">Observable&lt;void&gt;</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">animationDone
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                __0</p>
+            <code class="docs-api-method-parameter-type">AnimationEvent_2</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">animationStart
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">handleBodyInteraction
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">hide
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delay</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">isTemplateRef
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                value</p>
+            <code class="docs-api-method-parameter-type">any</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">boolean</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">isVisible
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">boolean</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">markForCheck
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">show
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delay</p>
+            <code class="docs-api-method-parameter-type">number</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateClassMap
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                placement</p>
+            <code class="docs-api-method-parameter-type">string</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                customClass</p>
+            <code class="docs-api-method-parameter-type">string</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                size</p>
+            <code class="docs-api-method-parameter-type">PopUpSizes</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+
+
+
+    
+      
+
+<h4 id="McPopoverTrigger" class="docs-header-link docs-api-h4 docs-api-class-name">
+    <span header-link="McPopoverTrigger"></span>
+    <code>McPopoverTrigger</code>
+    
+    <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="components/core/api#McPopUpTrigger" class="docs-api-class-extends-type">
+      McPopUpTrigger
+    </a>
+  </span>
+    
+</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+    <table class="docs-api-properties-table">
+        <tr class="docs-api-properties-header-row">
+          <th class="docs-api-properties-th">Name</th>
+          <th class="docs-api-properties-th">Description</th>
+        </tr>
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>availablePositions: {
+    [key: string]: ConnectionPositionPair;
+}</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>backdropClass: string</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>closeOnScroll: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>content: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>customClass: string</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>destroyed: Subject&lt;void&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>detach: (): void =&gt; {
+    if (this.overlayRef &amp;&amp; this.overlayRef.hasAttached()) {
+        this.overlayRef.detach();
+    }
+    this.instance = null;
+}</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>direction: Directionality</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>disabled: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>elementRef: ElementRef</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>enterDelay: number</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>footer: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>hasBackdrop: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>header: string | TemplateRef&lt;any&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>hostView: ViewContainerRef</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>instance: any | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>isOpen: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>leaveDelay: number</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>listeners: Map&lt;string, EventListenerOrEventListenerObject&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>ngZone: NgZone</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>onPositionChange: ($event: ConnectedOverlayPositionChange): void =&gt; {
+    if (!this.instance) {
+        return;
+    }
+    let newPlacement = this.placement;
+    const { originX, originY, overlayX, overlayY } = $event.connectionPair;
+    Object.keys(this.availablePositions).some((key) =&gt; {
+        if (originX === this.availablePositions[key].originX &amp;&amp; originY === this.availablePositions[key].originY &amp;&amp;
+            overlayX === this.availablePositions[key].overlayX &amp;&amp; overlayY === this.availablePositions[key].overlayY) {
+            newPlacement = key as PopUpPlacements;
+            return true;
+        }
+        return false;
+    });
+    this.placementChange.emit(newPlacement);
+    this.updateClassMap(newPlacement);
+    if ($event.scrollableViewProperties.isOverlayClipped &amp;&amp; this.instance.isVisible()) {
+        this.ngZone.run(() =&gt; this.hide());
+    }
+}</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>originSelector: &#39;.mc-popover&#39;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>overlay: Overlay</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>overlayConfig: OverlayConfig</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>overlayRef: OverlayRef | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>placement: PopUpPlacements.Top</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>placementChange: EventEmitter</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>placementPriority: string | string[] | null</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>popoverPlacement: PopUpPlacements</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>popoverPlacementPriority: </code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>popoverVisible: boolean</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>portal: ComponentPortal&lt;T&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>scrollDispatcher: ScrollDispatcher</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>scrollStrategy: </code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>size: PopUpSizes</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>trigger: string</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>visible: false</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+            
+
+<tr class="docs-api-properties-row">
+    <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+            <code>visibleChange: EventEmitter&lt;boolean&gt;</code>
+        </p>
+    </td>
+    <td class="docs-api-property-description"></td>
+</tr>
+
+
+        
+    </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">clearListeners
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">closingActions
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">createOverlay
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Create the overlay config and position strategy</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">OverlayRef</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getOverlayHandleComponentType
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">Type&lt;McPopoverComponent&gt;</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getPrioritizedPositions
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getPriorityPlacementStrategy
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                value</p>
+            <code class="docs-api-method-parameter-type">string | string[]</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    <thead>
+    <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="docs-api-method-returns-type-cell">
+            <code class="docs-api-method-returns-type">ConnectionPositionPair[]</code>
+        </td>
+        <td class="docs-api-method-returns-description-cell">
+            <p class="docs-api-method-returns-description">
+                
+            </p>
+        </td>
+    </tr></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">handleKeydown
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                event</p>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">handleTouchend
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">hide
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delay</p>
+            <code class="docs-api-method-parameter-type">number = this.leaveDelay</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">initListeners
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">show
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                delay</p>
+            <code class="docs-api-method-parameter-type">number = this.enterDelay</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateClassMap
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                newPlacement</p>
+            <code class="docs-api-method-parameter-type">string = this.placement</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateData
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updatePlacement
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                value</p>
+            <code class="docs-api-method-parameter-type">PopUpPlacements</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updatePlacementPriority
+        </th>
+    </tr>
+    </thead></table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updatePosition
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Updates the position of the current popover.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                reapplyPosition</p>
+            <code class="docs-api-method-parameter-type">boolean = false</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+        
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">updateVisible
+        </th>
+    </tr>
+    </thead><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                externalValue</p>
+            <code class="docs-api-method-parameter-type">boolean</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    
+
+
+
+    <h3 id="functions" class="docs-header-link docs-api-h3">
+      <span header-link="functions"></span>
+      Functions
+    </h3>
+    
+      
+      
+
+<table class="docs-api-method-table">
+    <thead>
+    <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">getMcPopoverInvalidPositionError
+        </th>
+    </tr>
+    </thead><tr class="docs-api-method-description-row">
+        <td colspan="2" class="docs-api-method-description-cell">
+            <p>Creates an error to be thrown if the user supplied an invalid popover position.</p>
+
+        </td>
+    </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+        <td class="docs-api-method-parameter-cell">
+            <p class="docs-api-method-parameter-name">
+                position</p>
+            <code class="docs-api-method-parameter-type">string</code>
+        </td>
+        <td class="docs-api-method-parameter-description-cell">
+            <p class="docs-api-method-parameter-description">
+                
+            </p>
+        </td>
+    </tr>
+    </table>
+
+
+    <h3 id="constants" class="docs-header-link docs-api-h3">
+      <span header-link="constants"></span>
+      Constants
+    </h3>
+    
+      
+
+<h4 id="MC_POPOVER_SCROLL_STRATEGY" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="MC_POPOVER_SCROLL_STRATEGY"></span>
+    <code>MC_POPOVER_SCROLL_STRATEGY</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MC_POPOVER_SCROLL_STRATEGY: InjectionToken&lt;<span class="hljs-function">() =&gt;</span> ScrollStrategy&gt;;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="mcPopoverAnimations" class="docs-header-link docs-api-h4 docs-api-constant-name">
+    <span header-link="mcPopoverAnimations"></span>
+    <code>mcPopoverAnimations</code>
+</h4><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code"><span class="hljs-keyword">const</span> mcPopoverAnimations: { <span class="hljs-keyword">readonly</span> popoverState: AnimationTriggerMetadata; };</code>
+</pre>
+</div>
+
+
+    </div>
