@@ -1,0 +1,26 @@
+<div class="example-timepicker-group">
+    <div class="example-timepicker__controls">
+        <mc-form-field class="">
+            <mc-select [(value)]="timeFormat">
+                <mc-option [value]="'HH:mm'">HH:mm</mc-option>
+                <mc-option [value]="'HH:mm:ss'">HH:mm:ss</mc-option>
+            </mc-select>
+        </mc-form-field>
+
+        <mc-checkbox class="" [(ngModel)]="isIconVisible">Show icon</mc-checkbox>
+        <mc-checkbox class="" [(ngModel)]="isDisabled">Disabled</mc-checkbox>
+    </div>
+
+    <mc-form-field
+        class="example-timepicker-element"
+        [mcWarningTooltip]="'Только цифры'"
+        #tooltip="mcWarningTooltip">
+
+        <i *ngIf="isIconVisible" mcPrefix mc-icon="mc-clock_16"></i>
+        <input mcTimepicker
+               [(ngModel)]="value"
+               [disabled]="isDisabled"
+               [format]="timeFormat"
+               [mcValidationTooltip]="tooltip">
+    </mc-form-field>
+</div>
