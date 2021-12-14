@@ -1,0 +1,59 @@
+<span class="hljs-keyword">import</span> { Component, OnInit } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { FormControl } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
+<span class="hljs-keyword">import</span> { merge, Observable, <span class="hljs-keyword">of</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs&#x27;</span>;
+<span class="hljs-keyword">import</span> { map } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs/operators&#x27;</span>;
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> OPTIONS = [
+    <span class="hljs-string">&#x27;Abakan&#x27;</span>, <span class="hljs-string">&#x27;Almetyevsk&#x27;</span>, <span class="hljs-string">&#x27;Anadyr&#x27;</span>, <span class="hljs-string">&#x27;Anapa&#x27;</span>, <span class="hljs-string">&#x27;Arkhangelsk&#x27;</span>, <span class="hljs-string">&#x27;Astrakhan&#x27;</span>, <span class="hljs-string">&#x27;Barnaul&#x27;</span>, <span class="hljs-string">&#x27;Belgorod&#x27;</span>, <span class="hljs-string">&#x27;Beslan&#x27;</span>, <span class="hljs-string">&#x27;Biysk&#x27;</span>,
+    <span class="hljs-string">&#x27;Birobidzhan&#x27;</span>, <span class="hljs-string">&#x27;Blagoveshchensk&#x27;</span>, <span class="hljs-string">&#x27;Bologoye&#x27;</span>, <span class="hljs-string">&#x27;Bryansk&#x27;</span>, <span class="hljs-string">&#x27;Veliky Novgorod&#x27;</span>, <span class="hljs-string">&#x27;Veliky Ustyug&#x27;</span>, <span class="hljs-string">&#x27;Vladivostok&#x27;</span>,
+    <span class="hljs-string">&#x27;Vladikavkaz&#x27;</span>, <span class="hljs-string">&#x27;Vladimir&#x27;</span>, <span class="hljs-string">&#x27;Volgograd&#x27;</span>, <span class="hljs-string">&#x27;Vologda&#x27;</span>, <span class="hljs-string">&#x27;Vorkuta&#x27;</span>, <span class="hljs-string">&#x27;Voronezh&#x27;</span>, <span class="hljs-string">&#x27;Gatchina&#x27;</span>, <span class="hljs-string">&#x27;Gdov&#x27;</span>, <span class="hljs-string">&#x27;Gelendzhik&#x27;</span>,
+    <span class="hljs-string">&#x27;Gorno-Altaysk&#x27;</span>, <span class="hljs-string">&#x27;Grozny&#x27;</span>, <span class="hljs-string">&#x27;Gudermes&#x27;</span>, <span class="hljs-string">&#x27;Gus-Khrustalny&#x27;</span>, <span class="hljs-string">&#x27;Dzerzhinsk&#x27;</span>, <span class="hljs-string">&#x27;Dmitrov&#x27;</span>, <span class="hljs-string">&#x27;Dubna&#x27;</span>, <span class="hljs-string">&#x27;Yeysk&#x27;</span>, <span class="hljs-string">&#x27;Yekaterinburg&#x27;</span>,
+    <span class="hljs-string">&#x27;Yelabuga&#x27;</span>, <span class="hljs-string">&#x27;Yelets&#x27;</span>, <span class="hljs-string">&#x27;Yessentuki&#x27;</span>, <span class="hljs-string">&#x27;Zlatoust&#x27;</span>, <span class="hljs-string">&#x27;Ivanovo&#x27;</span>, <span class="hljs-string">&#x27;Izhevsk&#x27;</span>, <span class="hljs-string">&#x27;Irkutsk&#x27;</span>, <span class="hljs-string">&#x27;Yoshkar-Ola&#x27;</span>, <span class="hljs-string">&#x27;Kazan&#x27;</span>,
+    <span class="hljs-string">&#x27;Kaliningrad&#x27;</span>, <span class="hljs-string">&#x27;Kaluga&#x27;</span>, <span class="hljs-string">&#x27;Kemerovo&#x27;</span>, <span class="hljs-string">&#x27;Kislovodsk&#x27;</span>, <span class="hljs-string">&#x27;Komsomolsk-on-Amur&#x27;</span>, <span class="hljs-string">&#x27;Kotlas&#x27;</span>, <span class="hljs-string">&#x27;Krasnodar&#x27;</span>, <span class="hljs-string">&#x27;Krasnoyarsk&#x27;</span>,
+    <span class="hljs-string">&#x27;Kurgan&#x27;</span>, <span class="hljs-string">&#x27;Kursk&#x27;</span>, <span class="hljs-string">&#x27;Kyzyl&#x27;</span>, <span class="hljs-string">&#x27;Leninogorsk&#x27;</span>, <span class="hljs-string">&#x27;Lensk&#x27;</span>, <span class="hljs-string">&#x27;Lipetsk&#x27;</span>, <span class="hljs-string">&#x27;Luga&#x27;</span>, <span class="hljs-string">&#x27;Lyuban&#x27;</span>, <span class="hljs-string">&#x27;Lyubertsy&#x27;</span>, <span class="hljs-string">&#x27;Magadan&#x27;</span>, <span class="hljs-string">&#x27;Maykop&#x27;</span>,
+    <span class="hljs-string">&#x27;Makhachkala&#x27;</span>, <span class="hljs-string">&#x27;Miass&#x27;</span>, <span class="hljs-string">&#x27;Mineralnye Vody&#x27;</span>, <span class="hljs-string">&#x27;Mirny&#x27;</span>, <span class="hljs-string">&#x27;Moscow&#x27;</span>, <span class="hljs-string">&#x27;Murmansk&#x27;</span>, <span class="hljs-string">&#x27;Murom&#x27;</span>, <span class="hljs-string">&#x27;Mytishchi&#x27;</span>,
+    <span class="hljs-string">&#x27;Naberezhnye Chelny&#x27;</span>, <span class="hljs-string">&#x27;Nadym&#x27;</span>, <span class="hljs-string">&#x27;Nalchik&#x27;</span>, <span class="hljs-string">&#x27;Nazran&#x27;</span>, <span class="hljs-string">&#x27;Naryan-Mar&#x27;</span>, <span class="hljs-string">&#x27;Nakhodka&#x27;</span>, <span class="hljs-string">&#x27;Nizhnevartovsk&#x27;</span>, <span class="hljs-string">&#x27;Nizhnekamsk&#x27;</span>,
+    <span class="hljs-string">&#x27;Nizhny Novgorod&#x27;</span>, <span class="hljs-string">&#x27;Nizhny Tagil&#x27;</span>, <span class="hljs-string">&#x27;Novokuznetsk&#x27;</span>, <span class="hljs-string">&#x27;Novosibirsk&#x27;</span>, <span class="hljs-string">&#x27;Novy Urengoy&#x27;</span>, <span class="hljs-string">&#x27;Norilsk&#x27;</span>, <span class="hljs-string">&#x27;Obninsk&#x27;</span>,
+    <span class="hljs-string">&#x27;Oktyabrsky&#x27;</span>, <span class="hljs-string">&#x27;Omsk&#x27;</span>, <span class="hljs-string">&#x27;Orenburg&#x27;</span>, <span class="hljs-string">&#x27;Orekhovo-Zuyevo&#x27;</span>, <span class="hljs-string">&#x27;Oryol&#x27;</span>, <span class="hljs-string">&#x27;Penza&#x27;</span>, <span class="hljs-string">&#x27;Perm&#x27;</span>, <span class="hljs-string">&#x27;Petrozavodsk&#x27;</span>,
+    <span class="hljs-string">&#x27;Petropavlovsk-Kamchatsky&#x27;</span>, <span class="hljs-string">&#x27;Podolsk&#x27;</span>, <span class="hljs-string">&#x27;Pskov&#x27;</span>, <span class="hljs-string">&#x27;Pyatigorsk&#x27;</span>, <span class="hljs-string">&#x27;Rostov-on-Don&#x27;</span>, <span class="hljs-string">&#x27;Rybinsk&#x27;</span>, <span class="hljs-string">&#x27;Ryazan&#x27;</span>, <span class="hljs-string">&#x27;Salekhard&#x27;</span>,
+    <span class="hljs-string">&#x27;Samara&#x27;</span>, <span class="hljs-string">&#x27;Saint Petersburg&#x27;</span>, <span class="hljs-string">&#x27;Saransk&#x27;</span>, <span class="hljs-string">&#x27;Saratov&#x27;</span>, <span class="hljs-string">&#x27;Severodvinsk&#x27;</span>, <span class="hljs-string">&#x27;Smolensk&#x27;</span>, <span class="hljs-string">&#x27;Sol-Iletsk&#x27;</span>, <span class="hljs-string">&#x27;Sochi&#x27;</span>, <span class="hljs-string">&#x27;Stavropol&#x27;</span>,
+    <span class="hljs-string">&#x27;Surgut&#x27;</span>, <span class="hljs-string">&#x27;Syktyvkar&#x27;</span>, <span class="hljs-string">&#x27;Tambov&#x27;</span>, <span class="hljs-string">&#x27;Tver&#x27;</span>, <span class="hljs-string">&#x27;Tobolsk&#x27;</span>, <span class="hljs-string">&#x27;Tolyatti&#x27;</span>, <span class="hljs-string">&#x27;Tomsk&#x27;</span>, <span class="hljs-string">&#x27;Tuapse&#x27;</span>, <span class="hljs-string">&#x27;Tula&#x27;</span>, <span class="hljs-string">&#x27;Tynda&#x27;</span>, <span class="hljs-string">&#x27;Tyumen&#x27;</span>,
+    <span class="hljs-string">&#x27;Ulan-Ude&#x27;</span>, <span class="hljs-string">&#x27;Ulyanovsk&#x27;</span>, <span class="hljs-string">&#x27;Ufa&#x27;</span>, <span class="hljs-string">&#x27;Khabarovsk&#x27;</span>, <span class="hljs-string">&#x27;Khanty-Mansiysk&#x27;</span>, <span class="hljs-string">&#x27;Chebarkul&#x27;</span>, <span class="hljs-string">&#x27;Cheboksary&#x27;</span>, <span class="hljs-string">&#x27;Chelyabinsk&#x27;</span>,
+    <span class="hljs-string">&#x27;Cherepovets&#x27;</span>, <span class="hljs-string">&#x27;Cherkessk&#x27;</span>, <span class="hljs-string">&#x27;Chistopol&#x27;</span>, <span class="hljs-string">&#x27;Chita&#x27;</span>, <span class="hljs-string">&#x27;Shadrinsk&#x27;</span>, <span class="hljs-string">&#x27;Shatura&#x27;</span>, <span class="hljs-string">&#x27;Shuya&#x27;</span>, <span class="hljs-string">&#x27;Elista&#x27;</span>, <span class="hljs-string">&#x27;Engels&#x27;</span>,
+    <span class="hljs-string">&#x27;Yuzhno-Sakhalinsk&#x27;</span>, <span class="hljs-string">&#x27;Yakutsk&#x27;</span>, <span class="hljs-string">&#x27;Yaroslavl&#x27;</span>
+];
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic Select
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;select-search-overview-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;select-search-overview-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;select-search-overview-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SelectSearchOverviewExample</span> <span class="hljs-title">implements</span> <span class="hljs-title">OnInit</span> </span>{
+    selected = [];
+
+    searchControl: FormControl = <span class="hljs-keyword">new</span> FormControl();
+    options: <span class="hljs-built_in">string</span>[] = OPTIONS.sort();
+
+    filteredOptions: Observable&lt;<span class="hljs-built_in">string</span>[]&gt;;
+
+    ngOnInit(): <span class="hljs-built_in">void</span> {
+        <span class="hljs-built_in">this</span>.filteredOptions = merge(
+            <span class="hljs-keyword">of</span>(OPTIONS),
+            <span class="hljs-built_in">this</span>.searchControl.valueChanges
+                .pipe(map(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-built_in">this</span>.getFilteredOptions(value)))
+        );
+    }
+
+    <span class="hljs-keyword">private</span> getFilteredOptions(value: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">string</span>[] {
+        <span class="hljs-keyword">const</span> searchFilter = (value &amp;&amp; value.new) ? value.value : value;
+
+        <span class="hljs-keyword">return</span> searchFilter
+            ? <span class="hljs-built_in">this</span>.options.filter(<span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span>
+                option.toLowerCase().includes((searchFilter.toLowerCase())))
+            : <span class="hljs-built_in">this</span>.options;
+    }
+}
