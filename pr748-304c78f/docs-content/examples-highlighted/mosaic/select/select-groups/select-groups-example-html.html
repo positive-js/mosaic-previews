@@ -1,0 +1,8 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-select</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-optgroup</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">&quot;let group of pokemonTypes&quot;</span> [<span class="hljs-attr">label</span>]=<span class="hljs-string">&quot;group.name&quot;</span> [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">&quot;group.disabled&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">&quot;let pokemon of group.pokemon&quot;</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">&quot;pokemon.value&quot;</span>&gt;</span>{{ pokemon.viewValue }}<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-optgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-option</span> [<span class="hljs-attr">value</span>]=<span class="hljs-string">&quot;&#x27;mime-11&#x27;&quot;</span>&gt;</span>Mr. Mime<span class="hljs-tag">&lt;/<span class="hljs-name">mc-option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
