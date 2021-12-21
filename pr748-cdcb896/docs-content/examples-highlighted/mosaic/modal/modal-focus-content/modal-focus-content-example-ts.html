@@ -1,0 +1,83 @@
+<span class="hljs-comment">// tslint:disable:no-console</span>
+<span class="hljs-keyword">import</span> { Component, ViewChild } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { McButton } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/button&#x27;</span>;
+<span class="hljs-keyword">import</span> { ThemePalette } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { McInput } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/input&#x27;</span>;
+<span class="hljs-keyword">import</span> { McModalRef, McModalService } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/modal&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Modal with focused content
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;modal-focus-content-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;modal-focus-content-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;modal-focus-content-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModalFocusContentExample</span> </span>{
+    <span class="hljs-attr">componentModal</span>: McModalRef;
+
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;modalButton&#x27;</span>) modalButton: McButton;
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modalService: McModalService</span>)</span> {}
+
+    <span class="hljs-function"><span class="hljs-title">openModal</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-built_in">this</span>.componentModal = <span class="hljs-built_in">this</span>.modalService.open({ <span class="hljs-attr">mcComponent</span>: McModalFocusContentComponent });
+
+        <span class="hljs-built_in">this</span>.componentModal.afterOpen
+            .subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.componentModal.getContentComponent().focusedField.focus());
+
+        <span class="hljs-built_in">this</span>.componentModal.afterClose
+            .subscribe(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.modalButton.focusViaKeyboard());
+    }
+}
+
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;mc-modal-focus-content-component&#x27;</span>,
+    <span class="hljs-attr">template</span>: <span class="hljs-string">`
+        &lt;mc-modal-title&gt;Modal Title&lt;/mc-modal-title&gt;
+
+        &lt;mc-modal-body&gt;
+            &lt;form class=&quot;mc-form-horizontal margin&quot; novalidate&gt;
+                &lt;div class=&quot;mc-form__row&quot;&gt;
+                    &lt;label class=&quot;mc-form__label&quot;&gt;Подпись поля&lt;/label&gt;
+                    &lt;mc-form-field class=&quot;mc-form__control flex-80&quot;&gt;
+                        &lt;input name=&quot;input&quot; #focusedField mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;mc-form__row&quot;&gt;
+                    &lt;label class=&quot;mc-form__label&quot;&gt;Подпись поля&lt;/label&gt;
+                    &lt;mc-form-field class=&quot;mc-form__control flex-50&quot;&gt;
+                        &lt;input name=&quot;input&quot; mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                    &lt;mc-form-field class=&quot;mc-form__control flex-30&quot;&gt;
+                        &lt;input name=&quot;input&quot; mcInput&gt;
+
+                        &lt;mc-hint&gt;Подсказка под полем&lt;/mc-hint&gt;
+                    &lt;/mc-form-field&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/mc-modal-body&gt;
+
+        &lt;div mc-modal-footer&gt;
+            &lt;button mc-button [color]=&quot;themePalette.Primary&quot; (click)=&quot;destroyModal(&#x27;save&#x27;)&quot;&gt;Save&lt;/button&gt;
+            &lt;button mc-button autofocus (click)=&quot;destroyModal(&#x27;close&#x27;)&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+  `</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">McModalFocusContentComponent</span> </span>{
+    themePalette = ThemePalette;
+
+    <span class="hljs-meta">@ViewChild</span>(<span class="hljs-string">&#x27;focusedField&#x27;</span>, { <span class="hljs-attr">read</span>: McInput }) focusedField: McInput;
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> modal: McModalRef</span>)</span> { }
+
+    <span class="hljs-function"><span class="hljs-title">destroyModal</span>(<span class="hljs-params">action: <span class="hljs-string">&#x27;save&#x27;</span> | <span class="hljs-string">&#x27;close&#x27;</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.modal.destroy(action);
+    }
+}
