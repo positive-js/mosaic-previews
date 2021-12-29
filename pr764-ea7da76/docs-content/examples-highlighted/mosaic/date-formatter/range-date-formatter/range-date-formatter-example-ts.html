@@ -1,0 +1,240 @@
+<span class="hljs-comment">/* tslint:disable:no-magic-numbers */</span>
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateAdapter, MC_DATE_LOCALE } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/cdk/datetime&#x27;</span>;
+<span class="hljs-keyword">import</span> { LuxonDateAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic-luxon-adapter/adapter&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateFormatter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateTime } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;luxon&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic progress range-date-formatter
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;range-date-formatter-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;range-date-formatter-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;range-date-formatter-example.css&#x27;</span>],
+    <span class="hljs-attr">providers</span>: [
+        { <span class="hljs-attr">provide</span>: MC_DATE_LOCALE, <span class="hljs-attr">useValue</span>: <span class="hljs-string">&#x27;ru&#x27;</span> },
+        { <span class="hljs-attr">provide</span>: DateAdapter, <span class="hljs-attr">useClass</span>: LuxonDateAdapter, <span class="hljs-attr">deps</span>: [MC_DATE_LOCALE] }
+    ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RangeDateFormatterExample</span> </span>{
+    formats = {
+        <span class="hljs-attr">ru</span>: {
+            <span class="hljs-attr">range</span>: {
+                <span class="hljs-attr">long</span>: {
+                    <span class="hljs-attr">date</span>: {
+                        <span class="hljs-attr">currentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    },
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                },
+                <span class="hljs-attr">middle</span>: {
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">currentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                },
+                <span class="hljs-attr">short</span>: {
+                    <span class="hljs-attr">date</span>: {
+                        <span class="hljs-attr">currentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    },
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                }
+            }
+        },
+        <span class="hljs-attr">en</span>: {
+            <span class="hljs-attr">range</span>: {
+                <span class="hljs-attr">long</span>: {
+                    <span class="hljs-attr">date</span>: {
+                        <span class="hljs-attr">currentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    },
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                },
+                <span class="hljs-attr">middle</span>: {
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">currentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                },
+                <span class="hljs-attr">short</span>: {
+                    <span class="hljs-attr">date</span>: {
+                        <span class="hljs-attr">currentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    },
+                    <span class="hljs-attr">dateTime</span>: {
+                        <span class="hljs-attr">sameDateCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">sameDateNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">notCurrentMonth</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">startsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                        <span class="hljs-attr">endsNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                    }
+                }
+            }
+        }
+    };
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> adapter: DateAdapter&lt;DateTime&gt;, <span class="hljs-keyword">private</span> dateFormatter: DateFormatter&lt;DateTime&gt;</span>)</span> {
+        <span class="hljs-built_in">this</span>.populateRangeLong(<span class="hljs-string">&#x27;ru&#x27;</span>);
+        <span class="hljs-built_in">this</span>.populateRangeLong(<span class="hljs-string">&#x27;en&#x27;</span>);
+
+        <span class="hljs-built_in">this</span>.populateRangeMiddle(<span class="hljs-string">&#x27;ru&#x27;</span>);
+        <span class="hljs-built_in">this</span>.populateRangeMiddle(<span class="hljs-string">&#x27;en&#x27;</span>);
+
+        <span class="hljs-built_in">this</span>.populateRangeShort(<span class="hljs-string">&#x27;ru&#x27;</span>);
+        <span class="hljs-built_in">this</span>.populateRangeShort(<span class="hljs-string">&#x27;en&#x27;</span>);
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">populateRangeShort</span>(<span class="hljs-params">locale: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.dateFormatter.setLocale(locale);
+        <span class="hljs-built_in">this</span>.adapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> shortRange = <span class="hljs-built_in">this</span>.formats[locale].range.short;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-built_in">this</span>.adapter.today();
+
+        shortRange.date.currentMonth = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDate(now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }), now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> }));
+        shortRange.date.notCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDate(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">2</span> })
+        );
+        shortRange.date.startsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDate(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">2</span> })
+        );
+        shortRange.date.endsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDate(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">2</span> }).plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+        shortRange.dateTime.sameDateCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDateTime(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        shortRange.dateTime.sameDateNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        shortRange.dateTime.notCurrentMonth = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        shortRange.dateTime.startsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        shortRange.dateTime.endsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeShortDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">month</span>: <span class="hljs-number">2</span> }).plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">populateRangeMiddle</span>(<span class="hljs-params">locale: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.dateFormatter.setLocale(locale);
+        <span class="hljs-built_in">this</span>.adapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> middleRange = <span class="hljs-built_in">this</span>.formats[locale].range.middle;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-built_in">this</span>.adapter.today();
+
+        middleRange.dateTime.currentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> })
+        );
+        middleRange.dateTime.sameDateCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        middleRange.dateTime.sameDateNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        middleRange.dateTime.notCurrentMonth = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        middleRange.dateTime.startsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        middleRange.dateTime.endsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeMiddleDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">populateRangeLong</span>(<span class="hljs-params">locale: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.dateFormatter.setLocale(locale);
+        <span class="hljs-built_in">this</span>.adapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> longRange = <span class="hljs-built_in">this</span>.formats[locale].range.long;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-built_in">this</span>.adapter.today();
+
+        longRange.date.currentMonth = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDate(now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }), now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> }));
+        longRange.date.notCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDate(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> })
+        );
+        longRange.date.startsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDate(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> })
+        );
+        longRange.date.endsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDate(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">10</span> }).plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+        longRange.dateTime.sameDateCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDateTime(
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">day</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        longRange.dateTime.sameDateNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">11</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        longRange.dateTime.notCurrentMonth = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        longRange.dateTime.startsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+        longRange.dateTime.endsNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.rangeLongDateTime(
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">hour</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">14</span> }),
+            now.set({ <span class="hljs-attr">month</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">day</span>: <span class="hljs-number">1</span> }).minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> }).set({ <span class="hljs-attr">hour</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">minute</span>: <span class="hljs-number">28</span> })
+        );
+    }
+}
