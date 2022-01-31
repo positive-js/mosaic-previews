@@ -1,0 +1,17 @@
+<ng-template #customContent>
+    <div>Popover content</div>
+</ng-template>
+
+<ng-template #customFooter>
+    <div>Popover footer</div>
+</ng-template>
+
+<button
+    mc-button
+    mcPopover
+    #popover="mcPopover"
+    [mcPopoverHeader]="'Popover header'"
+    [mcPopoverContent]="customContent"
+    [mcPopoverFooter]="customFooter">
+    Toggle popover
+</button>
