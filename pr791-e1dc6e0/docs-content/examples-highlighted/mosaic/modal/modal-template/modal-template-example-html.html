@@ -1,0 +1,15 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> #<span class="hljs-attr">modalButton</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-example-button&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;createTplModal(tplTitle, tplContent, tplFooter)&quot;</span>&gt;</span>Delete<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">tplTitle</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Заголовок окна<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">tplContent</span>&gt;</span>
+    Кибербезопасность сегодня — это целое направление информационных технологий, которое затрагивает практически все сферы жизни человека.
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">tplFooter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;buttons-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">mc-modal-main-action</span> [<span class="hljs-attr">color</span>]=<span class="hljs-string">&quot;themePalette.Second&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;destroyTplModal()&quot;</span>&gt;</span>Доп. действие<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">mc-modal-main-action</span> [<span class="hljs-attr">color</span>]=<span class="hljs-string">&quot;themePalette.Primary&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;destroyTplModal()&quot;</span>&gt;</span>Сохранить<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> <span class="hljs-attr">mc-modal-main-action</span> [<span class="hljs-attr">color</span>]=<span class="hljs-string">&quot;themePalette.Second&quot;</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;destroyTplModal()&quot;</span>&gt;</span>Отмена<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
