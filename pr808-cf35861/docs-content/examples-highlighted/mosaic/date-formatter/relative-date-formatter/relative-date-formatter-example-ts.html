@@ -1,0 +1,120 @@
+<span class="hljs-comment">/* tslint:disable:no-magic-numbers */</span>
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateAdapter, MC_DATE_LOCALE } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/cdk/datetime&#x27;</span>;
+<span class="hljs-keyword">import</span> { LuxonDateAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic-luxon-adapter/adapter&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateFormatter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ptsecurity/mosaic/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { DateTime } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;luxon&#x27;</span>;
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Basic progress relative-date-formatter
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;relative-date-formatter-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;relative-date-formatter-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;relative-date-formatter-example.css&#x27;</span>],
+    <span class="hljs-attr">providers</span>: [
+        { <span class="hljs-attr">provide</span>: MC_DATE_LOCALE, <span class="hljs-attr">useValue</span>: <span class="hljs-string">&#x27;ru&#x27;</span> },
+        { <span class="hljs-attr">provide</span>: DateAdapter, <span class="hljs-attr">useClass</span>: LuxonDateAdapter, <span class="hljs-attr">deps</span>: [MC_DATE_LOCALE] }
+    ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RelativeDateFormatterExample</span> </span>{
+    formats = {
+        <span class="hljs-attr">ru</span>: {
+            <span class="hljs-attr">relative</span>: {
+                <span class="hljs-attr">long</span>: {
+                    <span class="hljs-attr">beforeYesterdayNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">beforeYesterdayCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">yesterday</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">today</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">tomorrow</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                },
+                <span class="hljs-attr">short</span>: {
+                    <span class="hljs-attr">beforeYesterdayNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">beforeYesterdayCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">yesterday</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">today</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">tomorrow</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                }
+            }
+        },
+        <span class="hljs-attr">en</span>: {
+            <span class="hljs-attr">relative</span>: {
+                <span class="hljs-attr">long</span>: {
+                    <span class="hljs-attr">beforeYesterdayNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">beforeYesterdayCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">yesterday</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">today</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">tomorrow</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                },
+                <span class="hljs-attr">short</span>: {
+                    <span class="hljs-attr">beforeYesterdayNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">beforeYesterdayCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">yesterday</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">today</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">tomorrow</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+                    <span class="hljs-attr">afterTomorrowNotCurrentYear</span>: <span class="hljs-string">&#x27;&#x27;</span>
+                }
+            }
+        }
+    };
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> adapter: DateAdapter&lt;DateTime&gt;, <span class="hljs-keyword">private</span> dateFormatter: DateFormatter&lt;DateTime&gt;</span>)</span> {
+        <span class="hljs-built_in">this</span>.populateRelativeLong(<span class="hljs-string">&#x27;ru&#x27;</span>);
+        <span class="hljs-built_in">this</span>.populateRelativeLong(<span class="hljs-string">&#x27;en&#x27;</span>);
+
+        <span class="hljs-built_in">this</span>.populateRelativeShort(<span class="hljs-string">&#x27;ru&#x27;</span>);
+        <span class="hljs-built_in">this</span>.populateRelativeShort(<span class="hljs-string">&#x27;en&#x27;</span>);
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">populateRelativeShort</span>(<span class="hljs-params">locale: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.dateFormatter.setLocale(locale);
+        <span class="hljs-built_in">this</span>.adapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> relativeShort = <span class="hljs-built_in">this</span>.formats[locale].relative.short;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-built_in">this</span>.adapter.today();
+
+        relativeShort.beforeYesterdayNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(
+            now.minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+        relativeShort.beforeYesterdayCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(now.minus({ <span class="hljs-attr">days</span>: <span class="hljs-number">2</span> }));
+        relativeShort.yesterday = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(now.minus({ <span class="hljs-attr">days</span>: <span class="hljs-number">1</span> }));
+
+        relativeShort.today = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(now.minus({ <span class="hljs-attr">hours</span>: <span class="hljs-number">1</span> }));
+
+        relativeShort.tomorrow = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(now.plus({ <span class="hljs-attr">days</span>: <span class="hljs-number">1</span> }));
+        relativeShort.afterTomorrowCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(now.plus({ <span class="hljs-attr">days</span>: <span class="hljs-number">2</span> }));
+        relativeShort.afterTomorrowNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeShortDate(
+            now.plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">populateRelativeLong</span>(<span class="hljs-params">locale: <span class="hljs-built_in">string</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.dateFormatter.setLocale(locale);
+        <span class="hljs-built_in">this</span>.adapter.setLocale(locale);
+
+        <span class="hljs-keyword">const</span> relativeLong = <span class="hljs-built_in">this</span>.formats[locale].relative.long;
+        <span class="hljs-keyword">const</span> now = <span class="hljs-built_in">this</span>.adapter.today();
+
+        relativeLong.beforeYesterdayNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(
+            now.minus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+        relativeLong.beforeYesterdayCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(now.minus({ <span class="hljs-attr">days</span>: <span class="hljs-number">2</span> }));
+        relativeLong.yesterday = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(now.minus({ <span class="hljs-attr">days</span>: <span class="hljs-number">1</span> }));
+
+        relativeLong.today = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(now.minus({ <span class="hljs-attr">hours</span>: <span class="hljs-number">1</span> }));
+
+        relativeLong.tomorrow = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(now.plus({ <span class="hljs-attr">days</span>: <span class="hljs-number">1</span> }));
+        relativeLong.afterTomorrowCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(now.plus({ <span class="hljs-attr">days</span>: <span class="hljs-number">2</span> }));
+        relativeLong.afterTomorrowNotCurrentYear = <span class="hljs-built_in">this</span>.dateFormatter.relativeLongDate(
+            now.plus({ <span class="hljs-attr">years</span>: <span class="hljs-number">1</span> })
+        );
+    }
+}
