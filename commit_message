@@ -1,1 +1,1 @@
-8745c01a build(deps-dev): bump karma from 6.3.13 to 6.3.14
+fd92df1f fix: package.json & yarn.lock to reduce vulnerabilities
