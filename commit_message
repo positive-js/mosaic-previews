@@ -1,1 +1,1 @@
-fd92df1f fix: package.json & yarn.lock to reduce vulnerabilities
+b4ef678a build(deps): bump follow-redirects from 1.14.7 to 1.14.8
