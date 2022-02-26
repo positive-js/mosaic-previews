@@ -1,0 +1,24 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">customContent</span>&gt;</span>
+    Интересно, что это такое?
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Интересная мысль&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">customFooter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;buttons-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span>&gt;</span>Действие 2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span> [<span class="hljs-attr">color</span>]=<span class="hljs-string">&quot;themePalette.Primary&quot;</span>&gt;</span>Применить<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">mc-button</span>&gt;</span>Отмена<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">mc-button</span>
+    <span class="hljs-attr">mcPopover</span>
+    #<span class="hljs-attr">popover</span>=<span class="hljs-string">&quot;mcPopover&quot;</span>
+    <span class="hljs-attr">mcPopoverHeader</span>=<span class="hljs-string">&quot;Заголовок поповера&quot;</span>
+    [<span class="hljs-attr">mcPopoverContent</span>]=<span class="hljs-string">&quot;customContent&quot;</span>
+    [<span class="hljs-attr">mcPopoverFooter</span>]=<span class="hljs-string">&quot;customFooter&quot;</span>&gt;</span>
+    Toggle popover
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
