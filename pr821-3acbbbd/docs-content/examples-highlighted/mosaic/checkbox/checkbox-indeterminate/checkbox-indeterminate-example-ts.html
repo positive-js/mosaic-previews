@@ -1,0 +1,60 @@
+<span class="hljs-keyword">import</span> { ChangeDetectorRef, Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+
+<span class="hljs-keyword">interface</span> ICheckbox {
+    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+    checked: <span class="hljs-built_in">boolean</span>;
+}
+
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@title </span>Indeterminate checkbox
+ */</span>
+<span class="hljs-meta">@Component</span>({
+    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;checkbox-indeterminate-example&#x27;</span>,
+    <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;checkbox-indeterminate-example.html&#x27;</span>,
+    <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;checkbox-indeterminate-example.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CheckboxIndeterminateExample</span> </span>{
+    parentIndeterminate = <span class="hljs-literal">true</span>;
+    parentChecked = <span class="hljs-literal">true</span>;
+
+    fruits: ICheckbox[] = [
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Apples&#x27;</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">true</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Bananas&#x27;</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> },
+        { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Grapes&#x27;</span>, <span class="hljs-attr">checked</span>: <span class="hljs-literal">false</span> }
+    ];
+
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> ref: ChangeDetectorRef</span>)</span> {}
+
+    <span class="hljs-function"><span class="hljs-title">updateCheckboxes</span>(<span class="hljs-params">index: <span class="hljs-built_in">number</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.toggleFruitChecked(index);
+        <span class="hljs-built_in">this</span>.updateIndeterminate();
+        <span class="hljs-built_in">this</span>.ref.detectChanges();
+    }
+
+    <span class="hljs-function"><span class="hljs-title">toggleFruitChecked</span>(<span class="hljs-params">index: <span class="hljs-built_in">number</span></span>)</span> {
+        <span class="hljs-built_in">this</span>.fruits[index].checked = !<span class="hljs-built_in">this</span>.fruits[index].checked;
+    }
+
+    <span class="hljs-function"><span class="hljs-title">toggleChecked</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-built_in">this</span>.parentChecked = !<span class="hljs-built_in">this</span>.parentChecked;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> fruit <span class="hljs-keyword">of</span> <span class="hljs-built_in">this</span>.fruits) {
+            fruit.checked = <span class="hljs-built_in">this</span>.parentChecked;
+        }
+        <span class="hljs-built_in">this</span>.parentIndeterminate = <span class="hljs-literal">false</span>;
+        <span class="hljs-built_in">this</span>.ref.detectChanges();
+    }
+
+    <span class="hljs-function"><span class="hljs-title">updateIndeterminate</span>(<span class="hljs-params"></span>)</span> {
+        <span class="hljs-keyword">let</span> checked: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">let</span> unchecked: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">const</span> length = <span class="hljs-built_in">this</span>.fruits.length;
+        <span class="hljs-built_in">this</span>.fruits.forEach(<span class="hljs-function">(<span class="hljs-params">fruit</span>) =&gt;</span> {
+            fruit.checked ? checked++ : unchecked++;
+        });
+        <span class="hljs-built_in">this</span>.parentIndeterminate = (checked !== length &amp;&amp; unchecked !== length);
+        <span class="hljs-built_in">this</span>.parentChecked = <span class="hljs-built_in">this</span>.parentIndeterminate || length === checked;
+    }
+}
+
