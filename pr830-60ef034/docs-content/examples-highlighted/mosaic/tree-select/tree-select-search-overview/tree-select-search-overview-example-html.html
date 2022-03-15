@@ -1,0 +1,32 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-select</span>
+        [<span class="hljs-attr">multiple</span>]=<span class="hljs-string">&quot;true&quot;</span>
+        [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-form-field</span> <span class="hljs-attr">mcFormFieldWithoutBorders</span> <span class="hljs-attr">mcSelectSearch</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mcPrefix</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">&quot;mc-search_16&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">mcInput</span> [<span class="hljs-attr">formControl</span>]=<span class="hljs-string">&quot;searchControl&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-cleaner</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-cleaner</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">mc-select-search-empty-result</span>&gt;</span>Ничего не найдено<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-selection</span>
+            [<span class="hljs-attr">dataSource</span>]=<span class="hljs-string">&quot;dataSource&quot;</span>
+            [<span class="hljs-attr">treeControl</span>]=<span class="hljs-string">&quot;treeControl&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-option</span> *<span class="hljs-attr">mcTreeNodeDef</span>=<span class="hljs-string">&quot;let node&quot;</span> <span class="hljs-attr">mcTreeNodePadding</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> [<span class="hljs-attr">innerHTML</span>]=<span class="hljs-string">&quot;treeControl.getViewValue(node) | mcHighlight : treeControl.filterValue.value&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-option</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-option</span> *<span class="hljs-attr">mcTreeNodeDef</span>=<span class="hljs-string">&quot;let node; when: hasChild&quot;</span> <span class="hljs-attr">mcTreeNodePadding</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">mc-icon</span>=<span class="hljs-string">&quot;mc-angle-down-S_16&quot;</span>
+                   [<span class="hljs-attr">style.transform</span>]=<span class="hljs-string">&quot;treeControl.isExpanded(node) ? &#x27;&#x27; : &#x27;rotate(-90deg)&#x27;&quot;</span>
+                   <span class="hljs-attr">mcTreeNodeToggle</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> [<span class="hljs-attr">innerHTML</span>]=<span class="hljs-string">&quot;treeControl.getViewValue(node) | mcHighlight : treeControl.filterValue.value&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-selection</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-cleaner</span> #<span class="hljs-attr">mcSelectCleaner</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-cleaner</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-form-field</span>&gt;</span>

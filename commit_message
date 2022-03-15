@@ -1,1 +1,1 @@
-9477bfb1 fix(navbar): error when set mcTooltipDisabled on mc-navbar-item (#UIM-882)
+60ef034c chore(common): excluded coverage folders from style linter (#UIM-842)
