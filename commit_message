@@ -1,1 +1,1 @@
-60ef034c chore(common): excluded coverage folders from style linter (#UIM-842)
+d7eb5ccb fix(splitter): can' t detect changes with OnPush strategy (#UIM-880)
