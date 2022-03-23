@@ -1,0 +1,21 @@
+<span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-selection</span>
+    [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;modelValue&quot;</span>
+    [<span class="hljs-attr">dataSource</span>]=<span class="hljs-string">&quot;dataSource&quot;</span>
+    [<span class="hljs-attr">treeControl</span>]=<span class="hljs-string">&quot;treeControl&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-option</span>
+        *<span class="hljs-attr">mcTreeNodeDef</span>=<span class="hljs-string">&quot;let node&quot;</span>
+        <span class="hljs-attr">mcTreeNodePadding</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> [<span class="hljs-attr">innerHTML</span>]=<span class="hljs-string">&quot;treeControl.getViewValue(node)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-option</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-option</span>
+        *<span class="hljs-attr">mcTreeNodeDef</span>=<span class="hljs-string">&quot;let node; when: hasChild&quot;</span>
+        <span class="hljs-attr">mcTreeNodePadding</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-tree-node-toggle</span> [<span class="hljs-attr">node</span>]=<span class="hljs-string">&quot;node&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-node-toggle</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mc-progress-spinner</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">&quot;node.loading&quot;</span>
+                             <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;indeterminate&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mc-progress-spinner</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> [<span class="hljs-attr">innerHTML</span>]=<span class="hljs-string">&quot;treeControl.getViewValue(node)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mc-tree-selection</span>&gt;</span>
