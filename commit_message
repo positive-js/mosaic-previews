@@ -1,1 +1,1 @@
-5fcc19bd fix: package.json & yarn.lock to reduce vulnerabilities
+3fa62182 feat(table): use tabular styles for body content by default
