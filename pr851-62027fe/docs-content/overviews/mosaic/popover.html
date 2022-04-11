@@ -1,0 +1,171 @@
+<div class="docs-markdown"><p class="docs-markdown__p">Поповер — небольшой немодальный диалог без затемнения, который открывается рядом с триггерным элементом. Он может содержать текст, поля ввода, любые другие элементы управления.</p>
+<div mosaic-docs-example="popover-common"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="когда-использовать" id="когда-использовать"></span>
+          Когда использовать
+        </div>
+      <p class="docs-markdown__p">Возможные кейсы использования поповера:</p>
+<ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Нужно добавить на страницу интерактивный диалог, но без лишней модальности. Например, настройку фильтров в таблице.</li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="структура-компонента" id="структура-компонента"></span>
+          Структура компонента
+        </div>
+      <div style="margin-top: 15px;">
+    <img class="docs-markdown__img" src="./assets/images/popover/popover__structure.jpg" alt="popover structure" style="max-width: 528px"/><span class="docs-markdown__caption">
+</span></div>
+
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="обязательные-элементы" id="обязательные-элементы"></span>
+          Обязательные элементы
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Указатель</li>
+<li class="docs-markdown__li">Тело поповера с основным текстом.</li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="необязательные-элементы" id="необязательные-элементы"></span>
+          Необязательные элементы
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Шапка</li>
+<li class="docs-markdown__li">Контролы в теле</li>
+<li class="docs-markdown__li">Футер</li>
+<li class="docs-markdown__li">Кнопки в футере (нежелательны, потому что создают модальность)</li>
+</ul>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="размеры" id="размеры"></span>
+          Размеры
+        </div>
+      <p class="docs-markdown__p">Поповер имеет фиксированную ширину. Чтобы оптимально использовать пространство, полезно заложить несколько вариантов ширины поповера.</p>
+<table class="docs-markdown__table">
+<thead class="docs-markdown__thead">
+<tr class="docs-markdown__tr">
+<th class="docs-markdown__th">Предустановка</th>
+<th class="docs-markdown__th">Ширина</th>
+</tr>
+</thead>
+<tbody class="docs-markdown__tbody"><tr class="docs-markdown__tr">
+<td class="docs-markdown__td">Small</td>
+<td class="docs-markdown__td">200</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td">Normal</td>
+<td class="docs-markdown__td">400 по умолчанию</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td">Large</td>
+<td class="docs-markdown__td">640</td>
+</tr>
+</tbody></table>
+<p class="docs-markdown__p">Высота поповера зависит от контента. Рекомендуемая максимальная высота — 480px (может быть увеличена на усмотрение дизайнера).</p>
+<div class="mc-alert mc-alert_info" style="margin-top: 15px;">
+    <i class="mc mc-icon mc-info-o_16 mc-alert__icon"></i>
+    <span>Поповер должен оставаться относительно небольшим. Если вам нужно показать много контента, возьмите&nbsp;<a class="docs-markdown__a" href="/modal" target="_blank" mc-link pseudo>модальный&nbsp;диалог</a> или <a class="docs-markdown__a" href="/sidepanel" target="_blank" mc-link pseudo>сайдпанель</a>.</span> 
+</div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="описание-работы" id="описание-работы"></span>
+          Описание работы
+        </div>
+      
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="как-открыть-поповер" id="как-открыть-поповер"></span>
+          Как открыть поповер
+        </div>
+      <p class="docs-markdown__p">Поповер появляется после взаимодействия с триггерным элементом. Событие для открытия поповера — клик.</p>
+<p class="docs-markdown__p">При открытом поповере фоновая страница не блокируется, все интерактивные элементы (например, <a class="docs-markdown__a" href="/link" target="_blank">ссылки</a> и <a class="docs-markdown__a" href="/button" target="_blank">кнопки</a>) доступны и при наведении получают ховер.</p>
+
+        <div class="docs-header-link docs-header-link_4">
+          <span header-link="как-закрыть-поповер" id="как-закрыть-поповер"></span>
+          Как закрыть поповер
+        </div>
+      <ul class="docs-markdown__ul">
+<li class="docs-markdown__li">Клик мимо поповера</li>
+<li class="docs-markdown__li">Клик по кнопкам «Отмена» или «Применить» в футере (если есть)</li>
+<li class="docs-markdown__li">Нажатие на ESC</li>
+<li class="docs-markdown__li">Проскроллить страницу (опционально, см. поведение при скролле)</li>
+</ul>
+<div class="docs-header-link docs-header-link_5">Сохранение изменений при закрытии</div><p class="docs-markdown__p">Поповер с кнопкой «Применить» работает как модальный диалог: изменения применяются только нажатием на кнопку. Другие способы закрыть поповер не сохраняют изменения.</p>
+<p class="docs-markdown__p">Поповер без терминальных кнопок сохраняет изменения в реальном времени. Закрытие кликом мимо поповера или клавишей ESC не сбрасывает изменения.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="поведение-при-скролле" id="поведение-при-скролле"></span>
+          Поведение при скролле
+        </div>
+      <p class="docs-markdown__p">Скролл не блокируется. По умолчанию при скролле поповер не закрывается и скроллится вместе со страницей, оставаясь в том месте, откуда был открыт.</p>
+<div class="mc-alert mc-alert_warning" style="margin-top: 15px;">
+    <i class="mc mc-icon mc-error_16 mc-alert__icon"></i>
+    Поповер может быть закрыт при скролле страницы; какое поведение выбрать — решает проектировщик.
+</div>
+
+<div mosaic-docs-example="popover-scroll"></div>
+
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="выравнивание" id="выравнивание"></span>
+          Выравнивание
+        </div>
+      <div class="mc-alert mc-alert_info" style="margin-top: 15px;">
+    <i class="mc mc-icon mc-info-o_16 mc-alert__icon"></i>
+    Учитывайте контекст, в котором появляется поповер. Настройте выравнивание так, чтобы поповер не закрывал важный контент.
+</div>
+
+<div class="docs-header-link docs-header-link_5">По центру элемента</div><p class="docs-markdown__p">Указатель по центру поповера, целится в центр триггерного элемента.</p>
+<div mosaic-docs-example="popover-placement-center"></div>
+
+<div class="docs-header-link docs-header-link_5">По краю элемента</div><p class="docs-markdown__p">Край поповера выравнивается по краю триггерного элемента, указатель на фиксированном расстоянии от края поповера. Если элемент слишком маленький, указатель выравнивается по центру элемента.</p>
+<div mosaic-docs-example="popover-placement-edges"></div>
+
+<p class="docs-markdown__p"><strong>Динамическое выравнивание</strong></p>
+<p class="docs-markdown__p">Если для поповера не хватает места, он попытается перейти в другое положение. Например, из положения «снизу в центре» в положение «сверху в центре».</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="фокус-и-работа-с-клавиатурой" id="фокус-и-работа-с-клавиатурой"></span>
+          Фокус и работа с клавиатурой
+        </div>
+      <p class="docs-markdown__p">Если поповер содержит интерактивные элементы, он управляется по правилам модального окна (смотри <a class="docs-markdown__a" href="/modal" target="_blank">Модальный диалог</a>).</p>
+<p class="docs-markdown__p">После закрытия поповера фокус переходит на триггерный элемент. Это поведение по умолчанию. Есть несколько случаев, когда полезно переместить фокус на другой элемент.</p>
+<table class="docs-markdown__table">
+<thead class="docs-markdown__thead">
+<tr class="docs-markdown__tr">
+<th class="docs-markdown__th">Клавиша</th>
+<th class="docs-markdown__th">Поведение</th>
+</tr>
+</thead>
+<tbody class="docs-markdown__tbody"><tr class="docs-markdown__tr">
+<td class="docs-markdown__td"><span class="hot-key-Button">Tab</span></td>
+<td class="docs-markdown__td">Перевести фокус на триггерный элемент / с него</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td"><span class="hot-key-Button">Space</span> \ <span class="hot-key-Button">↵</span></td>
+<td class="docs-markdown__td">Открыть поповер</td>
+</tr>
+<tr class="docs-markdown__tr">
+<td class="docs-markdown__td"><span class="hot-key-Button">Esc</span></td>
+<td class="docs-markdown__td">Свернуть поповер</td>
+</tr>
+</tbody></table>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="валидация" id="валидация"></span>
+          Валидация
+        </div>
+      <p class="docs-markdown__p">Форма внутри поповера подчиняется <a class="docs-markdown__a" href="/validation" target="_blank">общим правилам валидации</a>.</p>
+<p class="docs-markdown__p">Поповер остается открытым, пока ошибки не будут исправлены.</p>
+
+        <div class="docs-header-link docs-header-link_3">
+          <span header-link="связанные-компоненты" id="связанные-компоненты"></span>
+          Связанные компоненты
+        </div>
+      <p class="docs-markdown__p"><a class="docs-markdown__a" href="/dropdown" target="_blank">Дропдаун</a> — кнопка-меню, открывающая выпадающий список доступных действий. Работает как группа контролов: в таб-последовательность попадает только триггерный элемент. Поповер же работает по логике модального диалога: при открытии перехватывает фокус и ведет его по контролам.</p>
+<p class="docs-markdown__p"><a class="docs-markdown__a" href="/tooltip" target="_blank">Тултип</a> — маленькое сообщение, которое показывается при наведении указателя на элемент интерфейса. В нем не может быть интерактивных элементов или изображений. В поповере можно выстроить интерактивное взаимодействие, поместить больше текста, добавить заголовок. В этом смысле он похож на упрощенный модальный диалог.</p>
+</div>
